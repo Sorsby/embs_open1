@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="mote">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/wireless/wireless.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/wireless/demo/demo.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/lib/diva.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/ptsupport.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/domains.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/experimentalDomains.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/vergil/vergil.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/experimentalDomains.jar!/" />
+    </SOURCES>
+  </library>
+</component>

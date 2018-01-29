@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+halt.condition.vm\:asmCtor=true
+halt.condition.vm\:exUncaught=true
+show.editor.background.image=true
+sonport=5000

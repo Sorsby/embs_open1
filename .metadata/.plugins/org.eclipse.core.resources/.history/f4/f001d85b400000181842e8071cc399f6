@@ -1,0 +1,10 @@
+package lsi.wsn.sync;
+
+public class MySourceNode extends TypedAtomicActor {
+
+	protected WirelessIOPort input;
+	
+	protected WirelessIOPort channelOutput;
+	protected WirelessIOPort frameOutput;
+	
+}

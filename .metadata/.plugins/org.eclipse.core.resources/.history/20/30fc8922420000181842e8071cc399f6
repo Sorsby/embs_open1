@@ -1,0 +1,12 @@
+package lsi.wsn.sync;
+
+import ptolemy.actor.TypedAtomicActor;
+
+public class MySourceNode extends TypedAtomicActor {
+
+	protected WirelessIOPort input;
+	
+	protected WirelessIOPort channelOutput;
+	protected WirelessIOPort frameOutput;
+	
+}
