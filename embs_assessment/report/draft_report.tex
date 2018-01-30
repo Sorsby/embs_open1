@@ -169,10 +169,13 @@ For my chosen PASS schedule the number of tokens that must be initially stored i
 \subsection{Question 1} % Sub-section
 For this task I opted to dedicate an entire class (SourceNodeActor) to perform the PtolemyII actor functions needed in the simulation. The class SourceNodeActor relies on another class (SourceNode) which provides the implementation of the protocol features, this in turn relies on another class SinkNodeModel which is responsible for modelling the sink nodes parameters and ultimately synchronising with their reception phases.
 \\
+
 An instance of SourceNode is created with a number of channels provided to the constructor (SourceNodeActor, initialise, 62). This design was taken so that I could reuse the code during the second part of this question.
 \\
-When the actor is initialised it begins reading beacons from a sink node channel for a specified amount of time, given by the constant DEFAULT_LISTENING_TIME (SourceNode, 11), when we read a beacon we extend the time to try get another and thus calculate the sink parameters. If the time expires we switch nodes and do the same again - this is how I sync to multiple nodes effectively.
+
+When the actor is initialised it begins reading beacons from a sink node channel for a specified amount of time, given by the constant DEFAULT\_LISTENING\_TIME (SourceNode, 11), when we read a beacon we extend the time to try get another and thus calculate the sink parameters. If the time expires we switch nodes and do the same again (SourceNode, registerNextFire, 102-103). This is how I sync to multiple nodes effectively.
 \\
+
 When n=1 we have to wait an entire protocol length to read another beacon, so we can switch away and come back later (SourceNode, readBeacon, 64). We then use the length between the iterations to calculate the sink parameters (SinkNodeModel, calcTForNEqual1, 115-119) and (SinkNodeModel, calcN, 102-109).
 
 %------------------------------------------------

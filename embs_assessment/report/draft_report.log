@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  30 JAN 2018 16:09
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  30 JAN 2018 17:01
 entering extended mode
 **./draft_report.tex
 (draft_report.tex
@@ -238,7 +238,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--149
 
  []
 
-[3] (draft_report.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+
+Overfull \hbox (7.20001pt too wide) in paragraph at lines 179--180
+\TU/lmr/m/n/14.4 other beacon, so we can switch away and come back later (Sourc
+eNode,
+ []
+
+[4] (draft_report.aux) ) 
 Here is how much of TeX's memory you used:
  1868 strings out of 427834
  22765 string characters out of 3148124
@@ -246,6 +267,6 @@ Here is how much of TeX's memory you used:
  5831 multiletter control sequences out of 15000+200000
  7154 words of font info for 39 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,9n,20p,210b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,20p,448b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on draft_report.pdf (4 pages).
+Output written on draft_report.pdf (5 pages).
