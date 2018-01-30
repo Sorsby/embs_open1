@@ -1,0 +1,9 @@
+mote-create -n Source -e 50000 --drift 20
+mote-create -n Sink1 -e 50000 --drift -20
+mote-create -n Sink2 -e 50000 --drift -10
+mote-create -n Sink3 -e 50000
+moma-load logger
+1 moma-load Sink1
+2 moma-load Sink2
+3 moma-load Sink3
+0 moma-load MySourceNode

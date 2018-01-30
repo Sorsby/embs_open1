@@ -10,13 +10,13 @@ public class SourceNode {
 
     private final SinkNodeModel[] sinkNodes;
     private final byte[] fireQueue;
-    private final int[] prevReceptionPhase;
+    private final long[] prevReceptionPhase;
 
     private int numChannels;
 
     private int currentChannel;
-    private int nextFire;
-    private int finishListeningTime;
+    private long nextFire;
+    private long finishListeningTime;
     private boolean extendedListeningTime;
 
     public SourceNode(int numChannels) {
@@ -27,7 +27,7 @@ public class SourceNode {
             this.sinkNodes[i] = new SinkNodeModel();
 
         this.fireQueue = new byte[numChannels];
-        this.prevReceptionPhase = new int[numChannels];
+        this.prevReceptionPhase = new long[numChannels];
 
         for (int i = 0; i < numChannels; i++) {
             fireQueue[i] = 0;
@@ -40,7 +40,7 @@ public class SourceNode {
         extendedListeningTime = false;
     }
 
-    public void readBeacon(int time, int n) {
+    public void readBeacon(long time, int n) {
         sinkNodes[currentChannel].readBeacon(time, n);
         if (n != 1 && !extendedListeningTime) {
             finishListeningTime = time + SinkNodeModel.MAX_T;
@@ -50,11 +50,11 @@ public class SourceNode {
         }
     }
 
-    public void registerNextFire(int time) {
+    public void registerNextFire(long time) {
         nextFire = -1;
 
         for (int i = 0; i < getNumChannels(); i++) {
-            int fireTime = sinkNodes[i].calcNextRxPhase(time);
+            long fireTime = sinkNodes[i].calcNextRxPhase(time);
 
             if (fireTime > 0) {
                 if (fireTime <= time) {
@@ -64,7 +64,7 @@ public class SourceNode {
                         prevReceptionPhase[i] = fireTime;
                     }
 
-                    int length = sinkNodes[i].totalProtocolLength();
+                    long length = sinkNodes[i].totalProtocolLength();
                     if (length != 0) {
                         fireTime += length;
                     } else {
@@ -83,7 +83,7 @@ public class SourceNode {
             changeChannel(time);
     }
 
-    private void changeChannel(int time) {
+    private void changeChannel(long time) {
         int channel = currentChannel + 1;
         currentChannel = -1;
 
@@ -112,8 +112,8 @@ public class SourceNode {
         return this.currentChannel;
     }
 
-    public int getNextFireTime() {
-        int next = nextFire;
+    public long getNextFireTime() {
+        long next = nextFire;
         if (next == -1 || finishListeningTime < next) {
             next = finishListeningTime;
         }

@@ -18,66 +18,14 @@
     <SUITE FILE_PATH="coverage/embs_assessment$ptolemyII.coverage" NAME="ptolemyII Coverage Results" MODIFIED="1516862730712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SourceNodeActor.java" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="SourceNodeActor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SourceNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-              <folding>
-                <element signature="e#3375#3376#0" expanded="true" />
-                <element signature="e#3414#3415#0" expanded="true" />
-                <element signature="e#3452#3453#0" expanded="true" />
-                <element signature="e#3494#3495#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoteSourceNode.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sink2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/q2mote/Sink2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="731">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SinkNodeModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="e#2233#2234#0" expanded="true" />
-                <element signature="e#2264#2265#0" expanded="true" />
-                <element signature="e#2293#2294#0" expanded="true" />
-                <element signature="e#2324#2325#0" expanded="true" />
-                <element signature="e#3106#3107#0" expanded="true" />
-                <element signature="e#3149#3150#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,9 +44,12 @@
     <findStrings>
       <find>int</find>
       <find>MY_CHA</find>
+      <find>absolute</find>
+      <find>controller</find>
     </findStrings>
     <replaceStrings>
       <replace>long</replace>
+      <replace>sourceNode</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -124,19 +75,25 @@
         <option value="$PROJECT_DIR$/src/lsi/embs/PtolemySourceNode.java" />
         <option value="$PROJECT_DIR$/src/lsi/embs/SinkSyncData.java" />
         <option value="$PROJECT_DIR$/src/lsi/embs/ptolemy/SinkNodeModel.java" />
-        <option value="$PROJECT_DIR$/src/lsi/embs/archive/SourceController.java" />
         <option value="$PROJECT_DIR$/src/lsi/instruction/SingleSharedMemoryBus.java" />
         <option value="$PROJECT_DIR$/src/lsi/instruction/AddressTransitionCounter.java" />
         <option value="$PROJECT_DIR$/src/lsi/instruction/DataTransitionCounter.java" />
-        <option value="$PROJECT_DIR$/src/lsi/instruction/TransitionCounter.java" />
         <option value="$PROJECT_DIR$/src/lsi/embs/ptolemy/SourceNodeActor.java" />
         <option value="$PROJECT_DIR$/src/q2/part1/SourceNodeActor.java" />
         <option value="$PROJECT_DIR$/src/lsi/embs/ptolemy/SourceNode.java" />
         <option value="$PROJECT_DIR$/src/lsi/q2ptolemy/SourceNode.java" />
         <option value="$PROJECT_DIR$/src/q2ptolemy/SourceNode.java" />
         <option value="$PROJECT_DIR$/src/q2ptolemy/SinkNodeModel.java" />
-        <option value="$PROJECT_DIR$/src/q2/SourceNode.java" />
+        <option value="$PROJECT_DIR$/src/q2/MoteSourceNode.java" />
+        <option value="$PROJECT_DIR$/src/lsi/embs/archive/SourceController.java" />
+        <option value="$PROJECT_DIR$/src/lsi/instruction/TransitionCounter.java" />
+        <option value="$PROJECT_DIR$/src/q2mote/SourceNodeMote.java" />
         <option value="$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java" />
+        <option value="$PROJECT_DIR$/src/q2mote/configure-mote-sim.mrsh" />
+        <option value="$PROJECT_DIR$/src/q2/SinkNodeModel.java" />
+        <option value="$PROJECT_DIR$/src/q2/SourceNode.java" />
+        <option value="$PROJECT_DIR$/src/q2mote/MoteSourceNode.java" />
+        <option value="$PROJECT_DIR$/src/q2mote/MySourceNode.java" />
       </list>
     </option>
   </component>
@@ -146,10 +103,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="50" />
-    <option name="y" value="-23" />
-    <option name="width" value="2089" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1294" />
     <option name="height" value="1407" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -212,19 +168,24 @@
               <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
               <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lsi" type="462c0819:PsiDirectoryNode" />
+              <item name="instruction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
+              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="q2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
               <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="q2mote" type="462c0819:PsiDirectoryNode" />
+              <item name="q2ptolemy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="q2ptolemy" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -244,12 +205,16 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/q2mote" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote" />
       <recent name="C:\Users\Matthew\eclipse-workspace\embs_assessment\src\lsi\embs\archive" />
       <recent name="C:\Users\Matthew\eclipse-workspace\embs_assessment\src\lsi\instruction" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="q2mote" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote" />
@@ -377,34 +342,33 @@
       <updated>1516840529591</updated>
       <workItem from="1516840532174" duration="125000" />
       <workItem from="1516840671484" duration="77243000" />
-      <workItem from="1517202099807" duration="22246000" />
+      <workItem from="1517202099807" duration="31582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99614000" />
+    <option name="totallyTimeSpent" value="108950000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="1294" height="1407" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1328125" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13375296" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21400473" sideWeight="0.50222963" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2125" sideWeight="0.50397456" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2125" sideWeight="0.49777034" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21243116" sideWeight="0.49602544" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10333864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21069692" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890624" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2390625" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -499,7 +463,7 @@
         <state relative-caret-position="1445">
           <caret line="92" column="39" lean-forward="false" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -509,10 +473,10 @@
         <state relative-caret-position="612">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3414#3415#0" expanded="true" />
-            <element signature="e#3452#3453#0" expanded="true" />
-            <element signature="e#3494#3495#0" expanded="true" />
+            <element signature="e#3384#3385#0" expanded="false" />
+            <element signature="e#3423#3424#0" expanded="false" />
+            <element signature="e#3461#3462#0" expanded="false" />
+            <element signature="e#3503#3504#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,12 +509,12 @@
         <state relative-caret-position="901">
           <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
           <folding>
-            <element signature="e#2233#2234#0" expanded="true" />
-            <element signature="e#2264#2265#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="e#2324#2325#0" expanded="true" />
-            <element signature="e#3106#3107#0" expanded="true" />
-            <element signature="e#3149#3150#0" expanded="true" />
+            <element signature="e#2245#2246#0" expanded="false" />
+            <element signature="e#2276#2277#0" expanded="false" />
+            <element signature="e#2305#2306#0" expanded="false" />
+            <element signature="e#2336#2337#0" expanded="false" />
+            <element signature="e#3121#3122#0" expanded="false" />
+            <element signature="e#3164#3165#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,26 +617,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lsi/embs/archive/SourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding>
-            <element signature="e#1875#1876#0" expanded="false" />
-            <element signature="e#1913#1914#0" expanded="false" />
-            <element signature="e#1948#1949#0" expanded="false" />
-            <element signature="e#1982#1983#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lsi/embs/archive/PtolemySourceNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -680,14 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="61" lean-forward="true" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lsi/instruction/TransitionCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -704,59 +645,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding>
-            <marker date="1170646804000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1170646804000" expanded="false" signature="149:1340" ph="..." />
-            <marker date="1170646804000" expanded="false" signature="2316:2327" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="2350:2356" ph=" }" />
-            <marker date="1170646804000" expanded="true" signature="2401:2466" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="2586:2657" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="2716:2873" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="2959:3796" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="3851:8084" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="8163:8694" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="8773:8829" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="8920:8986" ph="{...}" />
-            <marker date="1170646804000" expanded="false" signature="9027:9038" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="9062:9068" ph=" }" />
-            <marker date="1170646804000" expanded="true" signature="9114:10137" ph="{...}" />
-            <marker date="1170646804000" expanded="false" signature="10180:10191" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="10214:10220" ph=" }" />
-            <marker date="1170646804000" expanded="false" signature="10262:10273" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="10295:10301" ph=" }" />
-            <marker date="1170646804000" expanded="false" signature="10343:10354" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="10381:10387" ph=" }" />
-            <marker date="1170646804000" expanded="true" signature="10393:10411" ph="/**...*/" />
-            <marker date="1170646804000" expanded="false" signature="10450:10461" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="10510:10516" ph=" }" />
-            <marker date="1170646804000" expanded="true" signature="10522:10540" ph="/**...*/" />
-            <marker date="1170646804000" expanded="false" signature="10578:10589" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="10637:10643" ph=" }" />
-            <marker date="1170646804000" expanded="true" signature="10704:11228" ph="{...}" />
-            <marker date="1170646804000" expanded="false" signature="11266:11277" ph=" { " />
-            <marker date="1170646804000" expanded="false" signature="11299:11305" ph=" }" />
-            <marker date="1170646804000" expanded="true" signature="11341:11496" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="11558:12212" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="12273:14199" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="14263:15019" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="15081:15244" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="15269:15548" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="15577:15816" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="15869:16056" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="16136:16423" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="16480:16653" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="16742:17783" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="17870:18483" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="18553:21337" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="21406:26188" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="26279:27570" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="27616:27948" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="28026:28497" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="28578:29038" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="29110:35108" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="35145:36932" ph="{...}" />
-            <marker date="1170646804000" expanded="true" signature="36998:37403" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -776,21 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#2233#2234#0" expanded="true" />
-            <element signature="e#2264#2265#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="e#2324#2325#0" expanded="true" />
-            <element signature="e#3106#3107#0" expanded="true" />
-            <element signature="e#3149#3150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/q2mote/Sink3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -804,7 +678,7 @@
         <state relative-caret-position="101">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -814,6 +688,86 @@
         <state relative-caret-position="85">
           <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lsi/instruction/TransitionCounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="82" lean-forward="true" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="103" column="43" lean-forward="true" selection-start-line="103" selection-start-column="43" selection-end-line="103" selection-end-column="43" />
+          <folding>
+            <element signature="e#2245#2246#0" expanded="false" />
+            <element signature="e#2276#2277#0" expanded="false" />
+            <element signature="e#2305#2306#0" expanded="false" />
+            <element signature="e#2336#2337#0" expanded="false" />
+            <element signature="e#3121#3122#0" expanded="false" />
+            <element signature="e#3164#3165#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2mote/configure-mote-sim.mrsh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lsi/embs/archive/SourceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="120" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="43" column="7" lean-forward="false" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="127" column="15" lean-forward="false" selection-start-line="127" selection-start-column="15" selection-end-line="127" selection-end-column="15" />
+          <folding>
+            <element signature="e#3384#3385#0" expanded="false" />
+            <element signature="e#3423#3424#0" expanded="false" />
+            <element signature="e#3461#3462#0" expanded="false" />
+            <element signature="e#3503#3504#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="52" lean-forward="true" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="52" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -821,30 +775,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        <state relative-caret-position="731">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3414#3415#0" expanded="true" />
-            <element signature="e#3452#3453#0" expanded="true" />
-            <element signature="e#3494#3495#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +860,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mote</last-edited>
+          <last-edited>demo</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

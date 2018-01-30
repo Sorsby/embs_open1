@@ -1,0 +1,409 @@
+A!	Sink3-1.0.48079	2.0	Java
+
+X	c:01/000	com.ibm.saguaro.system.Assembly
+X	c:01/001	com.ibm.saguaro.system.Util
+X	c:01/002	com.ibm.saguaro.system.Timer
+X	c:01/003	com.ibm.saguaro.system.Time
+X	c:01/004	com.ibm.saguaro.system.MoteException
+X	c:01/005	com.ibm.saguaro.system.Device
+X	c:01/006	com.ibm.saguaro.system.SDev
+X	c:01/007	com.ibm.saguaro.system.CDev
+X	c:01/008	com.ibm.saguaro.system.OutOfResourcesException
+X	c:01/009	com.ibm.saguaro.system.OsException
+X	c:01/00A	com.ibm.saguaro.system.NullReferenceException
+X	c:01/00B	com.ibm.saguaro.system.SystemException
+X	c:01/00C	com.ibm.saguaro.system.Mote
+X	c:01/00D	com.ibm.saguaro.system.LIP
+X	c:01/00E	com.ibm.saguaro.system.LED
+X	c:01/00F	com.ibm.saguaro.system.InvalidCastException
+X	c:01/010	com.ibm.saguaro.system.IndexOutOfRangeException
+X	c:01/011	com.ibm.saguaro.system.I2C
+X	c:01/012	com.ibm.saguaro.system.GPIO
+X	c:01/013	com.ibm.saguaro.system.Err
+X	c:01/014	com.ibm.saguaro.system.DeviceException
+X	c:01/015	com.ibm.saguaro.system.SPI
+X	c:01/016	com.ibm.saguaro.system.Radio
+X	c:01/017	com.ibm.saguaro.system.WLIP
+X	c:01/018	com.ibm.saguaro.system.ArrayTypeMismatchException
+X	c:01/019	com.ibm.saguaro.system.ArithmException
+X	c:01/01A	com.ibm.saguaro.system.ArgumentException
+X	c:01/01B	com.ibm.saguaro.system.AccessException
+X	c:01/01C	com.ibm.saguaro.system.ADC
+X	c:02/000	com.ibm.saguaro.logger.Logger
+
+C!	c:005	q2mote.Sink3	-1	0	c:000
+R	tsend	r:com.ibm.saguaro.system.Timer	0	0
+R	tstart	r:com.ibm.saguaro.system.Timer	0	1
+R	tled	r:com.ibm.saguaro.system.Timer	0	2
+R	toff	r:com.ibm.saguaro.system.Timer	0	3
+R	xmit	c[]	0	4
+R	radio	r:com.ibm.saguaro.system.Radio	0	5
+F	light	z	0	0
+F	wait	l	0	1
+F	n	i	0	3
+F	nc	i	0	4
+F	receiving	z	0	5
+F	t	i	0	6
+F	channel	c	0	7
+F	panid	c	0	8
+F	address	c	0	9
+H	IN_RECEPTION_PERIOD_Sink_3_received_beacon_with_payload$UTF8	b[]	0	73,78,32,82,69,67,69,80,84,73,79,78,32,80,69,82,73,79,68,58,32,83,105,110,107,32,51,32,114,101,99,101,105,118,101,100,32,98,101,97,99,111,110,32,119,105,116,104,32,112,97,121,108,111,97,100,32
+H	OUT_OF_RECEPTION_PERIOD_Sink_3_received_beacon_with_payload$UTF8	b[]	0	79,85,84,32,79,70,32,82,69,67,69,80,84,73,79,78,32,80,69,82,73,79,68,58,32,83,105,110,107,32,51,32,114,101,99,101,105,118,101,100,32,98,101,97,99,111,110,32,119,105,116,104,32,112,97,121,108,111,97,100,32
+H	Sink_3_has_begun_reception_at$UTF8	b[]	0	83,105,110,107,32,51,32,104,97,115,32,98,101,103,117,110,32,114,101,99,101,112,116,105,111,110,32,97,116,32
+H	Sink_3_has_finished_reception_at$UTF8	b[]	0	83,105,110,107,32,51,32,104,97,115,32,102,105,110,105,115,104,101,100,32,114,101,99,101,112,116,105,111,110,32,97,116,32
+H	Sink_assembly_deleted$UTF8	b[]	0	83,105,110,107,32,97,115,115,101,109,98,108,121,32,100,101,108,101,116,101,100
+H	at_time$UTF8	b[]	0	32,97,116,32,116,105,109,101,32
+M!	LEDoff(c,l)v	-1	m:00B1	00162	10
+M!	Sink3(r:q2mote.Sink3)v	-1	m:00B6	0016C	4
+M	access$000(i,i)i	-1	m:00B8	00170	10
+M	access$100(i,c[],i,i,l)i	-1	m:00BD	0017A	14
+M	onDelete(i,i)i	-1	m:00C4	00188	26
+M	onReceive(i,c[],i,i,l)i	-1	m:00D1	001A2	158
+M!	periodicSend(c,l)v	-1	m:0120	00240	94
+M!	restart(c,l)v	-1	m:014F	0029E	32
+M!	stopReceive(c,l)v	-1	m:015F	002BE	46
+
+C	c:007	com.ibm.saguaro.system.$tatics	-1	-1	c:01/000
+r	q2mote.Sink3.tsend	r:com.ibm.saguaro.system.Timer	-1	0
+r	q2mote.Sink3.tstart	r:com.ibm.saguaro.system.Timer	-1	1
+r	q2mote.Sink3.tled	r:com.ibm.saguaro.system.Timer	-1	2
+r	q2mote.Sink3.toff	r:com.ibm.saguaro.system.Timer	-1	3
+r	q2mote.Sink3.xmit	c[]	-1	4
+r	q2mote.Sink3.radio	r:com.ibm.saguaro.system.Radio	-1	5
+f	q2mote.Sink3.light	z	-1	0
+f	q2mote.Sink3.wait	l	-1	1
+f	q2mote.Sink3.n	i	-1	3
+f	q2mote.Sink3.nc	i	-1	4
+f	q2mote.Sink3.receiving	z	-1	5
+f	q2mote.Sink3.t	i	-1	6
+f	q2mote.Sink3.channel	c	-1	7
+f	q2mote.Sink3.panid	c	-1	8
+f	q2mote.Sink3.address	c	-1	9
+M	__init()v	-1	m:0012	00024	318
+
+c	00031	0	12	0	12	0	m:0012
+c	00035	0	16	0	16	0	m:0012
+c	0003F	0	17	0	17	0	m:0012
+c	00043	0	19	0	19	0	m:0012
+c	00047	0	21	0	21	0	m:0012
+c	0004D	0	24	0	24	0	m:0012
+c	00051	0	25	0	25	0	m:0012
+c	00056	0	26	0	26	0	m:0012
+c	0005B	0	29	0	29	0	m:0012
+c	00062	0	35	0	35	0	m:0012
+c	0006E	0	39	0	39	0	m:0012
+c	00077	0	43	0	43	0	m:0012
+c	00081	0	44	0	44	0	m:0012
+c	0008A	0	48	0	48	0	m:0012
+c	00090	0	49	0	49	0	m:0012
+c	00096	0	50	0	50	0	m:0012
+c	0009E	0	51	0	51	0	m:0012
+c	000A9	0	52	0	52	0	m:0012
+c	000B2	0	53	0	53	0	m:0012
+c	000BE	0	54	0	54	0	m:0012
+c	000CA	0	56	0	56	0	m:0012
+c	000D4	0	59	0	59	0	m:0012
+c	000DE	0	68	0	68	0	m:0012
+c	000E8	0	69	0	69	0	m:0012
+c	000F2	0	79	0	79	0	m:0012
+c	000FC	0	80	0	80	0	m:0012
+c	00106	0	86	0	86	0	m:0012
+c	00110	0	87	0	87	0	m:0012
+c	0011A	0	93	0	93	0	m:0012
+c	00124	0	94	0	94	0	m:0012
+c	0012E	0	101	0	101	0	m:0012
+c	00139	0	104	0	104	0	m:0012
+c	00148	0	106	0	106	0	m:0012
+c	00161	0	108	0	108	0	m:0012
+e	00162	m:0012
+c	00165	0	192	0	192	0	m:00B1
+l!	00165	0016B	c	param	m:00B1	0
+l!	00165	0016B	l	time	m:00B1	1
+c	0016A	0	193	0	193	0	m:00B1
+e!	0016C	m:00B1
+c	0016F	0	6	0	6	0	m:00B6
+l!	0016F	00170	r:q2mote.Sink3	this	m:00B6	0
+e!	00170	m:00B6
+c	00173	0	6	0	6	0	m:00B8
+l	00173	00179	i	x0	m:00B8	0
+l	00173	00179	i	x1	m:00B8	1
+e	0017A	m:00B8
+c	0017D	0	6	0	6	0	m:00BD
+l	0017D	00187	i	x0	m:00BD	0
+l	0017D	00187	c[]	x1	m:00BD	1
+l	0017D	00187	i	x2	m:00BD	2
+l	0017D	00187	i	x3	m:00BD	3
+l	0017D	00187	l	x4	m:00BD	4
+e	00188	m:00BD
+c	0018B	0	196	0	196	0	m:00C4
+l	0018B	001A1	i	type	m:00C4	0
+l	0018B	001A1	i	info	m:00C4	1
+c	00191	0	197	0	197	0	m:00C4
+c	00195	0	198	0	198	0	m:00C4
+c	00199	0	199	0	199	0	m:00C4
+c	0019F	0	201	0	201	0	m:00C4
+e	001A2	m:00C4
+c	001A5	0	112	0	112	0	m:00D1
+l	001A5	00240	i	flags	m:00D1	0
+l	001A5	00240	c[]	data	m:00D1	1
+l	001A5	00240	i	len	m:00D1	2
+l	001A5	00240	i	info	m:00D1	3
+l	001A5	00240	l	time	m:00D1	4
+c	001A8	0	114	0	114	0	m:00D1
+c	001C1	0	116	0	116	0	m:00D1
+c	001C3	0	118	0	118	0	m:00D1
+c	001C8	0	119	0	119	0	m:00D1
+c	001CD	0	120	0	120	0	m:00D1
+c	001D4	0	121	0	121	0	m:00D1
+c	001E3	0	122	0	122	0	m:00D1
+c	001E9	0	123	0	123	0	m:00D1
+c	001F1	0	124	0	124	0	m:00D1
+c	001F7	0	125	0	125	0	m:00D1
+c	001FE	0	126	0	126	0	m:00D1
+c	00204	0	128	0	128	0	m:00D1
+c	00209	0	129	0	129	0	m:00D1
+c	00210	0	130	0	130	0	m:00D1
+c	0021F	0	131	0	131	0	m:00D1
+c	00225	0	132	0	132	0	m:00D1
+c	0022D	0	133	0	133	0	m:00D1
+c	00233	0	134	0	134	0	m:00D1
+c	0023A	0	135	0	135	0	m:00D1
+c	0023E	0	138	0	138	0	m:00D1
+e	00240	m:00D1
+c	00243	0	146	0	146	0	m:0120
+l!	00243	0029D	c	param	m:0120	0
+l!	00243	0029D	l	time	m:0120	1
+c	00248	0	148	0	148	0	m:0120
+c	0025A	0	150	0	150	0	m:0120
+c	00263	0	151	0	151	0	m:0120
+c	0026B	0	152	0	152	0	m:0120
+c	00279	0	156	0	156	0	m:0120
+c	0027D	0	157	0	157	0	m:0120
+c	00283	0	158	0	158	0	m:0120
+c	0028A	0	159	0	159	0	m:0120
+c	0028E	0	160	0	160	0	m:0120
+c	00297	0	162	0	162	0	m:0120
+c	0029C	0	166	0	166	0	m:0120
+e!	0029E	m:0120
+c	002A1	0	185	0	185	0	m:014F
+l!	002A1	002BD	c	param	m:014F	0
+l!	002A1	002BD	l	time	m:014F	1
+c	002A7	0	186	0	186	0	m:014F
+c	002B1	0	187	0	187	0	m:014F
+c	002BC	0	189	0	189	0	m:014F
+e!	002BE	m:014F
+c	002C1	0	169	0	169	0	m:015F
+l!	002C1	002EB	c	param	m:015F	0
+l!	002C1	002EB	l	time	m:015F	1
+c	002C5	0	170	0	170	0	m:015F
+c	002CA	0	173	0	173	0	m:015F
+c	002D9	0	175	0	175	0	m:015F
+c	002DF	0	176	0	176	0	m:015F
+c	002E6	0	177	0	177	0	m:015F
+c	002EA	0	179	0	179	0	m:015F
+e!	002EC	m:015F
+S	C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote\Sink3.java
+:	package q2mote;
+:	
+:	import com.ibm.saguaro.system.*;
+:	import com.ibm.saguaro.logger.*;
+:	
+:	public class Sink3 {
+:	
+:	    private static Timer  tsend;
+:	    private static Timer  tstart;
+:	    private static Timer tled;
+:	    private static Timer toff;
+:	    private static boolean light=false;
+:	    
+:	    private static byte[] xmit;
+:	    private static long   wait;
+:	    static Radio radio = new Radio();
+:	    private static int n = 4; // number of beacons of sync phase - sample only, assessment will use unknown values
+:	    private static int nc;
+:	    private static boolean receiving = false;
+:	    
+:	    private static int t = 400; // milliseconds between beacons - sample only, assessment will use unknown values  
+:	    
+:	    // settings for sink A
+:	    private static byte channel = 2; // channel 13
+:	    private static byte panid = 0x13;
+:	    private static byte address = 0x13;
+:	
+:	    static {
+:	    	Assembly.setSystemInfoCallback(new SystemInfo(null){
+:				public int invoke(int type, int info){ 
+:					return onDelete(type, info);
+:				}
+:			});
+:	        // Open the default radio
+:	        radio.open(Radio.DID, null, 0, 0);
+:	        
+:	        
+:	        // Set channel 
+:	        radio.setChannel((byte)channel);
+:	        
+:	        
+:	        // Set the PAN ID and the short address
+:	        radio.setPanId(panid, true);
+:	        radio.setShortAddr(address);
+:	
+:	
+:	        // Prepare beacon frame with source and destination addressing
+:	        xmit = new byte[12];
+:	        xmit[0] = Radio.FCF_BEACON;
+:	        xmit[1] = Radio.FCA_SRC_SADDR|Radio.FCA_DST_SADDR;
+:	        Util.set16le(xmit, 3, panid); // destination PAN address 
+:	        Util.set16le(xmit, 5, 0xFFFF); // broadcast address 
+:	        Util.set16le(xmit, 7, panid); // own PAN address 
+:	        Util.set16le(xmit, 9, address); // own short address 
+:	
+:	        xmit[11] = (byte)n;
+:	
+:			// register delegate for received frames
+:	        radio.setRxHandler(new DevCallback(null){
+:	                public int invoke (int flags, byte[] data, int len, int info, long time) {
+:	                    return  Sink3.onReceive(flags, data, len, info, time);
+:	                }
+:	            });
+:	
+:	
+:	        
+:	        // Setup a periodic timer callback for beacon transmissions
+:	        tsend = new Timer();
+:	        tsend.setCallback(new TimerEvent(null){
+:	                public void invoke(byte param, long time){
+:	                    Sink3.periodicSend(param, time);
+:	                }
+:	            });
+:	            
+:	            
+:	        
+:	        
+:	        // Setup a periodic timer callback to restart the protocol
+:	        tstart = new Timer();
+:	        tstart.setCallback(new TimerEvent(null){
+:	                public void invoke(byte param, long time){
+:	                    Sink3.restart(param, time);
+:	                }
+:	            });
+:	            
+:	        tled = new Timer();
+:	        tled.setCallback(new TimerEvent(null) {
+:	        	public void invoke (byte param, long time) {
+:	        		Sink3.LEDoff(param, time);
+:	        	}
+:	        });
+:	        
+:	        toff = new Timer();
+:	        toff.setCallback(new TimerEvent(null) {
+:	        	public void invoke (byte param, long time) {
+:	        		Sink3.stopReceive(param, time);
+:	        	}
+:	        });
+:	        	
+:	        // Convert the periodic delay from ms to platform ticks
+:	        wait = Time.toTickSpan(Time.MILLISECS, t);
+:	        
+:	        
+:	        tstart.setAlarmBySpan(Time.toTickSpan(Time.SECONDS, 5)); //starts the protocol 5 seconds after constructing the assembly
+:	        
+:	        radio.startRx(Device.ASAP, 0, Time.currentTicks()+Time.toTickSpan(Time.SECONDS, 600));
+:	        
+:	    }
+:	
+:	    // Called when a frame is received or at the end of a reception period 
+:	    private static int onReceive (int flags, byte[] data, int len, int info, long time) {
+:	    	if (data == null) { // marks end of receiving
+:	            // turn green LED off 
+:	        	radio.startRx(Device.ASAP, 0, Time.currentTicks()+Time.toTickSpan(Time.SECONDS, 600));
+:		    	
+:	            return 0;
+:	        }
+:	    	if (receiving) {
+:	    		LED.setState((byte)2, (byte)1);
+:	    		tled.setParam((byte)2);
+:	            tled.setAlarmBySpan(Time.toTickSpan(Time.SECONDS, 1));
+:	            Logger.appendString(csr.s2b("IN RECEPTION PERIOD: Sink 3 received beacon with payload "));
+:	    		Logger.appendInt((int)data[11]);
+:	    		Logger.appendString(csr.s2b(" at time "));
+:	    		Logger.appendLong(Time.currentTime(Time.MILLISECS));
+:	            Logger.flush(Mote.ERROR);
+:	    	} else {
+:	    		LED.setState((byte)0, (byte)1);
+:	    		tled.setParam((byte)0);
+:	            tled.setAlarmBySpan(Time.toTickSpan(Time.SECONDS, 1));
+:	            Logger.appendString(csr.s2b("OUT OF RECEPTION PERIOD: Sink 3 received beacon with payload "));
+:	    		Logger.appendInt((int)data[11]);
+:	    		Logger.appendString(csr.s2b(" at time "));
+:	    		Logger.appendLong(Time.currentTime(Time.MILLISECS));
+:	            Logger.flush(Mote.ERROR);
+:	    	}
+:			
+:	        return 0;
+:	        
+:	    }
+:	
+:	
+:	    // Called on a timer alarm
+:	    public static void periodicSend(byte param, long time) { 
+:	        
+:	        if(nc>0){
+:		        // transmit a beacon 
+:	    	    radio.transmit(Device.ASAP|Radio.TXMODE_POWER_MAX, xmit, 0, 12, 0);
+:	        	// program new alarm
+:	        	tsend.setAlarmBySpan(wait);
+:	        	nc--;
+:	        	xmit[11]--;
+:	        }
+:	        else{
+:	        	//start reception phase
+:	        	receiving = true;
+:		        Logger.appendString(csr.s2b("Sink 3 has begun reception at "));
+:		        Logger.appendLong(Time.currentTime(Time.MILLISECS));
+:		        Logger.flush(Mote.WARN);
+:		        toff.setAlarmBySpan(wait);
+:		        // turn green LED on 
+:		        LED.setState((byte)1, (byte)1);
+:		        
+:	        }
+:	        
+:	    }
+:	    
+:	    public static void stopReceive(byte param, long time) {
+:	    	receiving = false;
+:	    	LED.setState((byte)1, (byte)0);
+:	        
+:	        //set alarm to restart protocol
+:	    	tstart.setAlarmBySpan(10*wait);
+:	                
+:	    	Logger.appendString(csr.s2b("Sink 3 has finished reception at "));
+:	        Logger.appendLong(Time.currentTime(Time.MILLISECS));
+:	        Logger.flush(Mote.WARN);
+:	    	
+:	    }
+:	
+:	
+:	    // Called on a timer alarm, starts the protocol
+:	    public static void restart(byte param, long time) {
+:	        
+:	        nc=n;
+:	        xmit[11]=(byte)n;
+:	       	tsend.setAlarmBySpan(0);
+:	        
+:	    }
+:	    
+:	    public static void LEDoff(byte param, long time) {
+:	    	LED.setState((byte)2, (byte)0);
+:	    }
+:	
+:		private static int onDelete(int type, int info){
+:			Logger.appendString(csr.s2b("Sink assembly deleted"));
+:			Logger.flush(Mote.INFO);
+:			if(type==Assembly.SYSEV_DELETED){
+:				radio.close();
+:			}
+:			return 0;
+:		}
+:	
+:	}

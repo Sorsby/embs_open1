@@ -58,7 +58,7 @@ public class SourceController {
      */
     private boolean hopExtended;
 
-    SourceController(int channels) {
+    public SourceController(int channels) {
         sinkData = new SinkSyncData[channels];
         sendPending = new byte[channels];
         lastReceptionPhase = new long[channels];

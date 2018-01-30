@@ -1,0 +1,21 @@
+.sxp-version 2.0
+
+.assembly Sink1-1.0
+
+
+.namespace q2mote
+
+.class#0 public Sink1
+
+	.method#0 static public Sink1(r:q2mote.Sink1 this)v
+
+	.method#1 static public periodicSend(c param, l time)v
+
+	.method#2 static public restart(c param, l time)v
+
+	.method#3 static public stopReceive(c param, l time)v
+
+	.method#4 static public LEDoff(c param, l time)v
+.end
+
+.end

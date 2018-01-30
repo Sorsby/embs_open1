@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/src/q2mote" includeSubdirectories="true" />
+      <file url="file://$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java" />
     </excludeFromCompile>
   </component>
 </project>

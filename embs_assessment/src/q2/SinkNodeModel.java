@@ -14,9 +14,9 @@ public class SinkNodeModel {
      * Two vars to store the previous values of n and t.
      */
     private int prevN;
-    private int prevTime;
+    private long prevTime;
     private int bestN;
-    private int bestT;
+    private long bestT;
     private boolean correctT;
     private boolean correctN;
 
@@ -29,8 +29,8 @@ public class SinkNodeModel {
         correctT = false;
     }
 
-    public void readBeacon(int time, int n) {
-        int timeGap = time - prevTime;
+    public void readBeacon(long time, int n) {
+        long timeGap = time - prevTime;
 
         if (n > bestN) {
             bestN = n;
@@ -61,8 +61,8 @@ public class SinkNodeModel {
     }
 
 
-    private void calcN(int timeGap, int nDiff) {
-        int beaconDiff = (timeGap / bestT) - nDiff;
+    private void calcN(long timeGap, int nDiff) {
+        int beaconDiff = (int)(timeGap / bestT) - nDiff;
         if (11 + bestN <= beaconDiff && beaconDiff <= 11 + MAX_N) {
             bestN = beaconDiff - 11;
             correctN = true;
@@ -73,8 +73,8 @@ public class SinkNodeModel {
      * Calculate t when n=1 by dividing the time gap by 12
      * @param timeGap the time between the current beacon being read and the prevTime.
      */
-    private void calcTForNEqual1(int timeGap) {
-        int t = timeGap / 12;
+    private void calcTForNEqual1(long timeGap) {
+        long t = timeGap / 12;
         if ((bestT == 0 || t < bestT) && (t > MIN_T && t < MAX_T))
             bestT = t;
     }
@@ -87,18 +87,17 @@ public class SinkNodeModel {
         return correctT;
     }
 
-    private static int nextRxPhaseStart(int protocolLength, int n) {
+    private long nextRxPhaseStart(long protocolLength, long n) {
         return (n + protocolLength) / protocolLength * protocolLength;
     }
 
-    public int calcNextRxPhase(int time) {
-        int rxPhaseTime = 0;
+    public long calcNextRxPhase(long time) {
+        long rxPhaseTime = 0;
 
         if (prevN != 0 && bestT != 0) {
-            //
-            int currentPhase = prevTime + prevN * bestT + 20;
-            int phaseLength = bestT - 20;
-            int protocolLength = (11 + bestN) * bestT;
+            long currentPhase = prevTime + prevN * bestT + 20;
+            long phaseLength = bestT - 20;
+            long protocolLength = (11 + bestN) * bestT;
 
             if (currentPhase + phaseLength > time) {
                 rxPhaseTime = currentPhase;
@@ -109,7 +108,7 @@ public class SinkNodeModel {
         return rxPhaseTime;
     }
 
-    public int totalProtocolLength() {
+    public long totalProtocolLength() {
         return (11 + bestN) * bestT;
     }
 
@@ -121,14 +120,14 @@ public class SinkNodeModel {
      * @param time current time.
      * @return an integer representing either the current time or the time a beacon could arrive as a minimum.
      */
-    public int calcNextBeacon(int time) {
+    public long calcNextBeacon(long time) {
         if (correctN && correctT)
             return 0;
 
         if (!correctT)
             return time;
 
-        int nextBeacon = prevTime + (11 + prevN) * bestT - 500;
+        long nextBeacon = prevTime + (11 + prevN) * bestT - 500;
         if (time >= nextBeacon)
             return time;
 

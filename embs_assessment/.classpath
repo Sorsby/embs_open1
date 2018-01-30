@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/ptolemy/ptsupport.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/ptolemy/vergil/vergil.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/lib/diva.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/domains.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/experimentalDomains.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/wireless/wireless.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Matthew/Desktop/EMBS/p2/ptII6.0.2/ptolemy/domains/wireless/demo/demo.jar"/>
+	<classpathentry excluding="lsi/embs/archive/MoteSourceNode.java|q2mote/MySourceNode.java|q2mote/Sink1.java|q2mote/Sink2.java|q2mote/Sink3.java" kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/ptolemy/ptsupport.jar"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/ptolemy/vergil/vergil.jar"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/lib/diva.jar"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/ptolemy/domains/domains.jar"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/ptolemy/domains/experimentalDomains.jar"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/ptolemy/domains/wireless/wireless.jar"/>
+	<classpathentry kind="lib" path="C:/Ptolemy/ptII6.0.2/ptolemy/domains/wireless/demo/demo.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

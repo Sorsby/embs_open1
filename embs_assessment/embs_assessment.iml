@@ -83,6 +83,11 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mote" level="project" />
+    <orderEntry type="library" name="ptsupport" level="project" />
+    <orderEntry type="library" name="vergil" level="project" />
+    <orderEntry type="library" name="diva" level="project" />
+    <orderEntry type="library" name="domains" level="project" />
+    <orderEntry type="library" name="wireless" level="project" />
+    <orderEntry type="library" name="demo" level="project" />
   </component>
 </module>

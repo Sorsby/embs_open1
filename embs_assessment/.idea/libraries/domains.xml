@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="domains">
+    <CLASSES>
+      <root url="jar://C:/Ptolemy/ptII6.0.2/ptolemy/domains/domains.jar!/" />
+      <root url="jar://C:/Ptolemy/ptII6.0.2/ptolemy/domains/experimentalDomains.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://C:/Ptolemy/ptII6.0.2/ptolemy/domains/experimentalDomains.jar!/" />
+    </SOURCES>
+  </library>
+</component>
