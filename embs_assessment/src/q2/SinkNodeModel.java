@@ -109,7 +109,7 @@ public class SinkNodeModel {
     }
 
     /**
-     * Calculate t when n=1 by dividing the time gap by 12
+     * Calculate t when n=1 by dividing the time gap by 12 - the number of t's that could have passed in one iteration.
      * @param timeGap the time between the current beacon being read and the prevTime.
      */
     private void calcTForNEqual1(long timeGap) {
