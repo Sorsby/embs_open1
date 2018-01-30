@@ -6,7 +6,7 @@ package q2;
 public class SourceNode {
 
     /**
-     * A constant defining how long we listen on a particular channel before switched to another.
+     * A constant defining how long we listen on a particular channel before switching to another.
      */
     private static final int DEFAULT_LISTENING_TIME =
             SinkNodeModel.MAX_T + SinkNodeModel.MIN_T;
@@ -138,6 +138,10 @@ public class SourceNode {
         return this.currentChannel;
     }
 
+    /**
+     * Determines the next fire time by taking the shortest of the {@link #nextFire} field and the standard {@link #finishListeningTime}
+     * @return the next firing time.
+     */
     public long getNextFireTime() {
         long next = nextFire;
         if (next == -1 || finishListeningTime < next) {

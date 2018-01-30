@@ -22,8 +22,8 @@
       <file leaf-file-name="SourceNodeActor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1972">
-              <caret line="125" column="75" lean-forward="false" selection-start-line="125" selection-start-column="75" selection-end-line="125" selection-end-column="75" />
+            <state relative-caret-position="-1052">
+              <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -32,8 +32,8 @@
       <file leaf-file-name="SourceNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="123" column="43" lean-forward="false" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="43" />
+            <state relative-caret-position="136">
+              <caret line="8" column="86" lean-forward="false" selection-start-line="8" selection-start-column="86" selection-end-line="8" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -42,11 +42,11 @@
       <file leaf-file-name="MySourceNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="120" column="23" lean-forward="false" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+            <state relative-caret-position="629">
+              <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
               <folding>
-                <element signature="e#1696#1697#0" expanded="true" />
-                <element signature="e#1748#1749#0" expanded="true" />
+                <element signature="e#1707#1708#0" expanded="true" />
+                <element signature="e#1759#1760#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,8 +55,8 @@
       <file leaf-file-name="SinkNodeModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1591">
-              <caret line="99" column="51" lean-forward="false" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+            <state relative-caret-position="826">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,11 +123,11 @@
         <option value="$PROJECT_DIR$/src/lsi/embs/archive/MoteSourceNode.java" />
         <option value="$PROJECT_DIR$/src/q2mote/configure-mote-sim.mrsh" />
         <option value="$PROJECT_DIR$/src/q2mote/MoteSourceNode.java" />
-        <option value="$PROJECT_DIR$/src/q2mote/MySourceNode.java" />
         <option value="$PROJECT_DIR$/src/q3/TransitionCounter.java" />
         <option value="$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java" />
-        <option value="$PROJECT_DIR$/src/q2/SourceNode.java" />
         <option value="$PROJECT_DIR$/src/q2/SinkNodeModel.java" />
+        <option value="$PROJECT_DIR$/src/q2mote/MySourceNode.java" />
+        <option value="$PROJECT_DIR$/src/q2/SourceNode.java" />
       </list>
     </option>
   </component>
@@ -185,38 +185,6 @@
               <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
               <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lsi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lsi" type="462c0819:PsiDirectoryNode" />
-              <item name="instruction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lsi" type="462c0819:PsiDirectoryNode" />
-              <item name="sync" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="q2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="embs_assessment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="embs_assessment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="q2ptolemy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -373,12 +341,12 @@
       <workItem from="1516840532174" duration="125000" />
       <workItem from="1516840671484" duration="77243000" />
       <workItem from="1517202099807" duration="31582000" />
-      <workItem from="1517285161782" duration="7835000" />
+      <workItem from="1517285161782" duration="9663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116785000" />
+    <option name="totallyTimeSpent" value="118613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1615" height="1407" extended-state="0" />
@@ -515,10 +483,10 @@
         <state relative-caret-position="612">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <element signature="e#4557#4558#0" expanded="false" />
-            <element signature="e#4596#4597#0" expanded="false" />
-            <element signature="e#4634#4635#0" expanded="false" />
-            <element signature="e#4676#4677#0" expanded="false" />
+            <element signature="e#4558#4559#0" expanded="false" />
+            <element signature="e#4597#4598#0" expanded="false" />
+            <element signature="e#4635#4636#0" expanded="false" />
+            <element signature="e#4677#4678#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,8 +630,8 @@
         <state relative-caret-position="270">
           <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
           <folding>
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -702,35 +670,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="125" column="75" lean-forward="false" selection-start-line="125" selection-start-column="75" selection-end-line="125" selection-end-column="75" />
+        <state relative-caret-position="-1052">
+          <caret line="30" column="7" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="86" lean-forward="false" selection-start-line="8" selection-start-column="86" selection-end-line="8" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="120" column="23" lean-forward="false" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
+        <state relative-caret-position="629">
+          <caret line="38" column="59" lean-forward="true" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
           <folding>
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1748#1749#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="123" column="43" lean-forward="false" selection-start-line="123" selection-start-column="43" selection-end-line="123" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1591">
-          <caret line="99" column="51" lean-forward="false" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+        <state relative-caret-position="826">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>

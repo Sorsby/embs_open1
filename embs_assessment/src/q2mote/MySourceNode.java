@@ -26,7 +26,7 @@ public final class MySourceNode {
     /**
      * Constant arbitrary payload to transmit
      */
-    private static final byte PAYLOAD = 0x11;
+    private static final byte MOTE_PAYLOAD = 0x11;
 
     /**
      * Number to add to the channel id to get the PAN id
@@ -36,7 +36,7 @@ public final class MySourceNode {
     /**
      * The short address of this source node
      */
-    private static final int MY_SHORT_ADDRESS = 0x42;
+    private static final int SOURCE_NODE_SHORT_ADDR = 0x42;
 
     private static final Radio radio = new Radio();
     private static final Timer timer = new Timer();
@@ -82,8 +82,8 @@ public final class MySourceNode {
         //radio setup
         xmit[0] = Radio.FCF_DATA;
         xmit[1] = Radio.FCA_SRC_SADDR | Radio.FCA_DST_SADDR;
-        Util.set16le(xmit, 9, MY_SHORT_ADDRESS);
-        xmit[11] = PAYLOAD;
+        Util.set16le(xmit, 9, SOURCE_NODE_SHORT_ADDR);
+        xmit[11] = MOTE_PAYLOAD;
 
         //switch to an initial channel
         switchChannel(sourceNode.getCurrentChannel());
@@ -106,12 +106,6 @@ public final class MySourceNode {
 
     private static int readBeacon(int flags, byte[] data, int len, int info, long time) {
         if (data != null) {
-            if (len != 12 || (data[0] & Radio.FCF_TYPE) != Radio.FCF_BEACON)
-                return 0;
-
-            if (Util.get16le(data, 3) != PAN_ID_OFFSET + sourceNode.getCurrentChannel())
-                return 0;
-
             long fireTime = Time.currentTime(Time.MILLISECS);
             int n = data[11];
 
@@ -130,16 +124,15 @@ public final class MySourceNode {
     private static void fireSourceNode() {
         timer.cancelAlarm();
 
-        long wakeupTime = sourceNode.getNextFireTime();
-        if (wakeupTime > 0)
-            timer.setAlarmTime(Time.toTickSpan(Time.MILLISECS, wakeupTime));
+        long nextFireTime = sourceNode.getNextFireTime();
+        if (nextFireTime > 0)
+            timer.setAlarmTime(Time.toTickSpan(Time.MILLISECS, nextFireTime));
 
         int sendChannel = sourceNode.getFireChannel();
 
         if (sendChannel != -1) {
             switchChannel(sendChannel);
-            radio.transmit(Device.ASAP | Radio.TXMODE_POWER_MAX | Radio.TXMODE_CCA,
-                    xmit, 0, xmit.length, 0);
+            radio.transmit(Device.ASAP | Radio.TXMODE_POWER_MAX | Radio.TXMODE_CCA, xmit, 0, xmit.length, 0);
             LED.setState(RED_LED, (byte) (1 - LED.getState(RED_LED)));
 
         } else {
