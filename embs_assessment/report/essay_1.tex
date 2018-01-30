@@ -88,6 +88,47 @@
 \paragraph{}
 We can determine the rate X of actor H by producing a set of simultaneous equations from Table 1 and the provided Synchronous Dataflow model.
 
+The topology matrix for the SDF model is as follows:
+\\
+
+$\Gamma = \begin{bmatrix}
+		2 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \cr
+		0 & 2 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \cr
+		0 & 0 & 2 & 0 & -2 & 0 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & 2 & -2 & 0 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & 0 & 2 & -6 & 0 & 0 & 0 \cr
+		0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & -1 \cr
+		0 & 0 & 0 & 0 & 0 & 0 & 3 & -2 & 0 \cr
+		0 & 0 & 0 & 0 & 0 & 0 & 0 & X & -3 \cr
+		0 & 0 & 0 & 0 & 0 & 0 & -1 & 0 & 1 \cr
+		\end{bmatrix}
+$
+\\ \\
+This gives us the following simultaneous equations:
+\\ \\
+$
+\begin{matrix}
+2A - 2E = 0 & 2B - 2E = 0 & 2C - 2E = 0 & 2D - 2E = 0 \\
+2E - 6F = 0 & F - I = 0 & 3G - 2H = 0 & XH - 3I = 0 \\
+I - G = 0
+\end{matrix}
+$
+\\ \\
+Using these equations I determined that $X = 2$. Similarly, I determined the firing frequencies of the remaining actors.
+\\
+$
+q = \bordermatrix{~ & ~ \cr
+				A & 6 \cr
+				B & 6 \cr
+				C & 6 \cr
+				D & 6 \cr
+				E & 6 \cr
+				F & 2 \cr
+				G & 2 \cr
+				H & 3 \cr
+				I & 2 \cr}	
+$
+
 %------------------------------------------------
 
 \subsection{Question 2} % Sub-section
