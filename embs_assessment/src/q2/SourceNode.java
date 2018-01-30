@@ -5,10 +5,17 @@ package q2;
  */
 public class SourceNode {
 
+    /**
+     * A constant defining how long we listen on a particular channel before switched to another.
+     */
     private static final int DEFAULT_LISTENING_TIME =
             SinkNodeModel.MAX_T + SinkNodeModel.MIN_T;
 
+    /**
+     * Stores instances of SourceNodeModel which contain the parameters and relevant information for sink nodes.
+     */
     private final SinkNodeModel[] sinkNodes;
+
     private final byte[] fireQueue;
     private final long[] prevReceptionPhase;
 
@@ -40,6 +47,14 @@ public class SourceNode {
         extendedListeningTime = false;
     }
 
+    /**
+     * Reads a beacon value on the current channel and forwards it to the SinkNodeModel.
+     * Extends the time on the current channel if the beacon is valid and we haven't already extended the read time.
+     * <p>
+     * Changes channel if we have used all the allocated time for this channel at the moment.
+     * @param time the time which the beacon was read.
+     * @param n the payload of the beacon.
+     */
     public void readBeacon(long time, int n) {
         sinkNodes[currentChannel].readBeacon(time, n);
         if (n != 1 && !extendedListeningTime) {
@@ -50,6 +65,11 @@ public class SourceNode {
         }
     }
 
+    /**
+     * Determines the times at which we next fire the actor on each channel.
+     * If we can calculate the RX phase for a sink node we queue a fire time.
+     * @param time the current time.
+     */
     public void registerNextFire(long time) {
         nextFire = -1;
 
@@ -83,6 +103,11 @@ public class SourceNode {
             changeChannel(time);
     }
 
+    /**
+     * Cycles through the defined channels looking for an appropriate one to read.
+     * Sets the value of current channel to this appropriate channel.
+     * @param time the current time.
+     */
     private void changeChannel(long time) {
         int channel = currentChannel + 1;
         currentChannel = -1;
@@ -90,6 +115,7 @@ public class SourceNode {
         for (int i = 0; i < getNumChannels(); i++) {
             int nextChannel = (channel + i) % getNumChannels();
 
+            //if we don't know the parameters for a sink it is clearly of interest to us.
             if (!sinkNodes[nextChannel].hasT() || !sinkNodes[nextChannel].hasN()) {
                 currentChannel = nextChannel;
 
@@ -122,7 +148,6 @@ public class SourceNode {
 
     /**
      * Determine which channel to fire from the queue of things to fire.
-     *
      * @return int Channel id to fire
      */
     public int getFireChannel() {
