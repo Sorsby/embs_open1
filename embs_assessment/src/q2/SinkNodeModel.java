@@ -7,8 +7,8 @@ package q2;
 public class SinkNodeModel {
 
     public static final int MAX_T = 1500;
-    public static final int MIN_T = 500;
-    public static final int MIN_N = 1;
+    public static final int MIN_T = 250;
+    public static final int MIN_N = 2;
     private static final int MAX_N = 10;
     /**
      * Two vars to store the previous values of n and t.
@@ -23,7 +23,7 @@ public class SinkNodeModel {
     public SinkNodeModel() {
         prevN = 0;
         prevTime = 0;
-        bestN = MIN_N;
+        bestN = 1;
         bestT = 0;
         correctN = false;
         correctT = false;

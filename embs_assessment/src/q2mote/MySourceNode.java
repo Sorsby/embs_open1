@@ -1,7 +1,6 @@
 package q2mote;
 
 import com.ibm.saguaro.system.*;
-import lsi.embs.archive.SourceController;
 import q2.SourceNode;
 
 /**
@@ -12,12 +11,10 @@ import q2.SourceNode;
  * Red LED    = Blinked when a packet is transmitted
  */
 public final class MySourceNode {
-    /* LED Colours */
-    private static final byte LED_YELLOW = (byte) 0;
-    private static final byte LED_GREEN = (byte) 1;
-    private static final byte LED_RED = (byte) 2;
+    private static final byte YELLOW_LED = (byte) 0;
+    private static final byte GREEN_LED = (byte) 1;
+    private static final byte RED_LED = (byte) 2;
 
-    /* LED States */
     private static final byte LED_OFF = (byte) 0;
     private static final byte LED_ON = (byte) 1;
 
@@ -78,19 +75,11 @@ public final class MySourceNode {
      */
     private static int pendingSendChannel = -1;
 
+    //static constructor to init the mote source node.
     static {
-        // Register unload callback
-        Assembly.setSystemInfoCallback(new SystemInfo(null) {
-            @Override
-            public int invoke(int type, int info) {
-                return onUnload(type, info);
-            }
-        });
-
-        // Open the radio
         radio.open(Radio.DID, null, 0, 0);
 
-        // Register radio and timer callbacks
+        //set callback for the reception phase on the radio.
         radio.setRxHandler(new DevCallback(null) {
             @Override
             public int invoke(int flags, byte[] data, int len, int info, long time) {
@@ -98,6 +87,7 @@ public final class MySourceNode {
             }
         });
 
+        //set callback for the transmission phase on the radio.
         radio.setTxHandler(new DevCallback(null) {
             @Override
             public int invoke(int flags, byte[] data, int len, int info, long time) {
@@ -105,6 +95,7 @@ public final class MySourceNode {
             }
         });
 
+        //set callback for the timer for reading beacons and firings.
         timer.setCallback(new TimerEvent(null) {
             @Override
             public void invoke(byte param, long time) {
@@ -112,7 +103,7 @@ public final class MySourceNode {
             }
         });
 
-        // Initialize radio and xmit fields for the first channel
+        //radio setup
         xmit[0] = Radio.FCF_DATA;
         xmit[1] = Radio.FCA_SRC_SADDR | Radio.FCA_DST_SADDR;
         Util.set16le(xmit, 9, MY_SHORT_ADDRESS);
@@ -123,7 +114,7 @@ public final class MySourceNode {
         handleControllerStateChange();
 
         // Turn Yellow LED on once we've finished
-        LED.setState(LED_YELLOW, LED_ON);
+        LED.setState(YELLOW_LED, LED_ON);
     }
 
     /**
@@ -151,7 +142,7 @@ public final class MySourceNode {
                 return 0;
 
             // Indicate we received a beacon
-            toggleLED(LED_GREEN);
+            toggleLED(GREEN_LED);
 
             // Notify controller
             //  We send a wakeupEvent as well to ensure all pending sends are refreshed now
@@ -204,7 +195,7 @@ public final class MySourceNode {
             if (tryChangeChannel(sendChannel)) {
                 radio.transmit(Device.ASAP | Radio.TXMODE_POWER_MAX | Radio.TXMODE_CCA,
                         xmit, 0, xmit.length, 0);
-                toggleLED(LED_RED);
+                toggleLED(RED_LED);
                 txOn = true;
             } else {
                 // Wait for an rxOff or txOff event
@@ -259,9 +250,6 @@ public final class MySourceNode {
      * @param channel channel to change to
      */
     private static void changeChannel(int channel) {
-        // Although the documentation says you do not need to do this,
-        // the radio on IRIS motes seems to need to be turned off
-        // completely before channel changes will take effect.
         radio.setState(Device.S_OFF);
 
         // Change the channel

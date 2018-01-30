@@ -1,0 +1,55 @@
+.sxp-version 2.0
+
+.assembly MySourceNode-1.0
+
+
+.namespace q2
+
+.class#0 public SourceNode
+
+	.method#0 public readBeacon(l time, i n)v
+
+	.method#1 public registerNextFire(l fireTime)v
+
+	.method#2 public getCurrentChannel()i
+
+	.method#3 public getNextFireTime()l
+
+	.method#4 public getFireChannel()i
+
+	.method#0 static public SourceNode(r:q2.SourceNode this, i i)v
+.end
+
+
+.class#1 public SinkNodeModel
+
+	.field static public final i MAX_T, 1500
+
+	.field static public final i MIN_T, 250
+
+	.field static public final i MIN_N, 2
+
+	.method#0 public readBeacon(l this, i time)v
+
+	.method#1 public hasN()z
+
+	.method#2 public hasT()z
+
+	.method#3 public calcNextRxPhase(l phaseLength)l
+
+	.method#4 public totalProtocolLength()l
+
+	.method#5 public calcNextBeacon(l time)l
+
+	.method#1 static public SinkNodeModel(r:q2.SinkNodeModel this)v
+.end
+
+
+.namespace q2mote
+
+.class#2 public final MySourceNode
+
+	.method#2 static public MySourceNode(r:q2mote.MySourceNode this)v
+.end
+
+.end

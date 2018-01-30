@@ -1,0 +1,958 @@
+A!	MySourceNode-1.0.62681	2.0	Java
+
+X	c:01/000	com.ibm.saguaro.system.Assembly
+X	c:01/001	com.ibm.saguaro.system.Util
+X	c:01/002	com.ibm.saguaro.system.Timer
+X	c:01/003	com.ibm.saguaro.system.Time
+X	c:01/004	com.ibm.saguaro.system.MoteException
+X	c:01/005	com.ibm.saguaro.system.Device
+X	c:01/006	com.ibm.saguaro.system.SDev
+X	c:01/007	com.ibm.saguaro.system.CDev
+X	c:01/008	com.ibm.saguaro.system.OutOfResourcesException
+X	c:01/009	com.ibm.saguaro.system.OsException
+X	c:01/00A	com.ibm.saguaro.system.NullReferenceException
+X	c:01/00B	com.ibm.saguaro.system.SystemException
+X	c:01/00C	com.ibm.saguaro.system.Mote
+X	c:01/00D	com.ibm.saguaro.system.LIP
+X	c:01/00E	com.ibm.saguaro.system.LED
+X	c:01/00F	com.ibm.saguaro.system.InvalidCastException
+X	c:01/010	com.ibm.saguaro.system.IndexOutOfRangeException
+X	c:01/011	com.ibm.saguaro.system.I2C
+X	c:01/012	com.ibm.saguaro.system.GPIO
+X	c:01/013	com.ibm.saguaro.system.Err
+X	c:01/014	com.ibm.saguaro.system.DeviceException
+X	c:01/015	com.ibm.saguaro.system.SPI
+X	c:01/016	com.ibm.saguaro.system.Radio
+X	c:01/017	com.ibm.saguaro.system.WLIP
+X	c:01/018	com.ibm.saguaro.system.ArrayTypeMismatchException
+X	c:01/019	com.ibm.saguaro.system.ArithmException
+X	c:01/01A	com.ibm.saguaro.system.ArgumentException
+X	c:01/01B	com.ibm.saguaro.system.AccessException
+X	c:01/01C	com.ibm.saguaro.system.ADC
+X	c:02/000	com.ibm.saguaro.logger.Logger
+
+C!	c:004	q2.SourceNode	-1	0	c:000
+r	prevReceptionPhase	l[]	0	0
+r	fireQueue	c[]	0	1
+r	sinkNodes	r:q2.SinkNodeModel[]	0	2
+f	extendedListeningTime	z	0	0
+f	finishListeningTime	l	0	1
+f	nextFire	l	0	3
+f	currentChannel	i	0	5
+f	numChannels	i	0	6
+G	DEFAULT_LISTENING_TIME	i	0	1750
+m!	getCurrentChannel()i	-1	m:0149	00292	8	2
+m!	getFireChannel()i	-1	m:014D	0029A	36	4
+m!	getNextFireTime()l	-1	m:015F	002BE	30	3
+m!	readBeacon(l,i)v	-1	m:01A2	00344	46	0
+m!	registerNextFire(l)v	-1	m:01B9	00372	140	1
+M!	SourceNode(r:q2.SourceNode,i)v	-1	m:0117	0022E	100
+M	non_virt$changeChannel(r:q2.SourceNode,l)v	-1	m:016E	002DC	96
+M	non_virt$getNumChannels(r:q2.SourceNode)i	-1	m:019E	0033C	8
+
+C!	c:00A	q2.SinkNodeModel	1	1	c:000
+f	correctN	z	1	0
+f	correctT	z	1	1
+f	bestT	l	1	2
+f	bestN	i	1	4
+f	prevTime	l	1	5
+f	prevN	i	1	7
+G	MAX_N	i	1	10
+G!	MAX_T	i	1	1500
+G!	MIN_N	i	1	2
+G!	MIN_T	i	1	250
+m!	calcNextBeacon(l)l	1	m:003C	00078	58	5
+m!	calcNextRxPhase(l)l	1	m:0059	000B2	108	3
+m!	hasN()z	1	m:008F	0011E	8	1
+m!	hasT()z	1	m:0093	00126	8	2
+m!	readBeacon(l,i)v	1	m:00CA	00194	138	0
+m!	totalProtocolLength()l	1	m:010F	0021E	16	4
+M!	SinkNodeModel(r:q2.SinkNodeModel)v	1	m:002A	00054	36
+M	non_virt$calcN(r:q2.SinkNodeModel,l,i)v	1	m:0097	0012E	38
+M	non_virt$calcTForNEqual1(r:q2.SinkNodeModel,l)v	1	m:00AA	00154	52
+M	non_virt$nextRxPhaseStart(r:q2.SinkNodeModel,l,l)l	1	m:00C4	00188	12
+
+C!	c:011	q2mote.MySourceNode	2	2	c:000
+R	sourceNode	r:q2.SourceNode	2	0
+R	radio	r:com.ibm.saguaro.system.Radio	2	1
+R	timer	r:com.ibm.saguaro.system.Timer	2	2
+R	xmit	c[]	2	3
+F	rxOn	z	2	0
+F	txOn	z	2	1
+F	pendingSendChannel	i	2	2
+G	GREEN_LED	c	2	1
+G	LED_OFF	c	2	0
+G	LED_ON	c	2	1
+G	MY_SHORT_ADDRESS	i	2	66
+G	NUM_CHANNELS	i	2	3
+G	PAN_ID_OFFSET	i	2	17
+G	PAYLOAD	c	2	17
+G	RED_LED	c	2	2
+G	YELLOW_LED	c	2	0
+M!	MySourceNode(r:q2mote.MySourceNode)v	2	m:0249	00492	4
+M	changeChannel(i)v	2	m:024B	00496	68
+M	handleControllerStateChange()v	2	m:026D	004DA	164
+M	rxBeacon(i,c[],i,i,l)i	2	m:02BF	0057E	86
+M	timerFire(c,l)v	2	m:02EA	005D4	18
+M	toggleLED(c)v	2	m:02F3	005E6	16
+M	tryChangeChannel(i)z	2	m:02FB	005F6	40
+M	txComplete(i,c[],i,i,l)i	2	m:030F	0061E	12
+
+C	c:013	com.ibm.saguaro.system.$tatics	-1	-1	c:01/000
+r	q2mote.MySourceNode.sourceNode	r:q2.SourceNode	-1	0
+r	q2mote.MySourceNode.radio	r:com.ibm.saguaro.system.Radio	-1	1
+r	q2mote.MySourceNode.timer	r:com.ibm.saguaro.system.Timer	-1	2
+r	q2mote.MySourceNode.xmit	c[]	-1	3
+f	q2mote.MySourceNode.rxOn	z	-1	0
+f	q2mote.MySourceNode.txOn	z	-1	1
+f	q2mote.MySourceNode.pendingSendChannel	i	-1	2
+M	__init()v	-1	m:01FF	003FE	148
+
+c	00057	1	24	0	24	0	m:002A
+l!	00057	00078	r:q2.SinkNodeModel	this	m:002A	0
+c	0005B	1	25	0	25	0	m:002A
+c	00063	1	26	0	26	0	m:002A
+c	00067	1	27	0	27	0	m:002A
+c	0006F	1	28	0	28	0	m:002A
+c	00073	1	29	0	29	0	m:002A
+c	00077	1	30	0	30	0	m:002A
+e!	00078	m:002A
+c	0007B	1	124	0	124	0	m:003C
+l!	0007B	000B1	r:q2.SinkNodeModel	this	m:003C	0
+l	0007B	000B1	l	time	m:003C	1
+c	00085	1	125	0	125	0	m:003C
+c	0008B	1	127	0	127	0	m:003C
+c	00090	1	128	0	128	0	m:003C
+c	00092	1	130	0	130	0	m:003C
+c	000A8	1	131	0	131	0	m:003C
+l	000A8	000B1	l	nextBeacon	m:003C	3
+c	000AD	1	132	0	132	0	m:003C
+c	000AF	1	134	0	134	0	m:003C
+e!	000B2	m:003C
+c	000B5	1	95	0	95	0	m:0059
+l!	000B5	0011D	r:q2.SinkNodeModel	this	m:0059	0
+l	000B5	0011D	l	time	m:0059	1
+c	000BB	1	97	0	97	0	m:0059
+l	000BB	0011D	l	rxPhaseTime	m:0059	3
+c	000CB	1	98	0	98	0	m:0059
+c	000DF	1	99	0	99	0	m:0059
+l	000DF	0011B	l	currentPhase	m:0059	5
+c	000EA	1	100	0	100	0	m:0059
+l	000EA	0011B	l	phaseLength	m:0059	7
+c	000F7	1	102	0	102	0	m:0059
+l	000F7	0011B	l	protocolLength	m:0059	9
+c	00100	1	103	0	103	0	m:0059
+c	00105	1	104	0	104	0	m:0059
+c	0010A	1	105	0	105	0	m:0059
+c	0011B	1	108	0	108	0	m:0059
+e!	0011E	m:0059
+c	00121	1	83	0	83	0	m:008F
+l	00121	00125	r:q2.SinkNodeModel	this	m:008F	0
+e!	00126	m:008F
+c	00129	1	87	0	87	0	m:0093
+l	00129	0012D	r:q2.SinkNodeModel	this	m:0093	0
+e!	0012E	m:0093
+c	00131	1	65	0	65	0	m:0097
+l	00131	00154	r:q2.SinkNodeModel	this	m:0097	0
+l	00131	00154	l	timeGap	m:0097	1
+l	00131	00154	i	nDiff	m:0097	3
+c	0013A	1	66	0	66	0	m:0097
+l	0013A	00154	i	beaconDiff	m:0097	4
+c	00148	1	67	0	67	0	m:0097
+c	0014F	1	68	0	68	0	m:0097
+c	00153	1	70	0	70	0	m:0097
+e	00154	m:0097
+c	00157	1	77	0	77	0	m:00AA
+l	00157	00188	r:q2.SinkNodeModel	this	m:00AA	0
+l	00157	00188	l	timeGap	m:00AA	1
+c	0015F	1	78	0	78	0	m:00AA
+l	0015F	00188	l	t	m:00AA	3
+c	00183	1	79	0	79	0	m:00AA
+c	00187	1	80	0	80	0	m:00AA
+e	00188	m:00AA
+c	0018B	1	91	0	91	0	m:00C4
+l	0018B	00193	r:q2.SinkNodeModel	this	m:00C4	0
+l	0018B	00193	l	protocolLength	m:00C4	1
+l	0018B	00193	l	n	m:00C4	3
+e	00194	m:00C4
+c	00197	1	33	0	33	0	m:00CA
+l!	00197	0021D	r:q2.SinkNodeModel	this	m:00CA	0
+l!	00197	0021D	l	time	m:00CA	1
+l	00197	0021D	i	n	m:00CA	3
+c	0019E	1	35	0	35	0	m:00CA
+l	0019E	0021D	l	timeGap	m:00CA	4
+c	001A4	1	36	0	36	0	m:00CA
+c	001A8	1	39	0	39	0	m:00CA
+c	001AE	1	40	0	40	0	m:00CA
+l	001AE	0021D	i	nDiff	m:00CA	6
+c	001BD	1	42	0	42	0	m:00CA
+c	001C7	1	43	0	43	0	m:00CA
+l	001C7	00214	i	minProtocolLength	m:00CA	7
+c	001D1	1	44	0	44	0	m:00CA
+c	001D9	1	45	0	45	0	m:00CA
+c	001DF	1	46	0	46	0	m:00CA
+c	001E4	1	48	0	48	0	m:00CA
+c	001F2	1	49	0	49	0	m:00CA
+c	001FC	1	50	0	50	0	m:00CA
+c	00202	1	51	0	51	0	m:00CA
+c	00208	1	55	0	55	0	m:00CA
+c	0020D	1	56	0	56	0	m:00CA
+c	00214	1	59	0	59	0	m:00CA
+c	00218	1	60	0	60	0	m:00CA
+c	0021C	1	61	0	61	0	m:00CA
+e!	0021E	m:00CA
+c	00221	1	112	0	112	0	m:010F
+l	00221	0022D	r:q2.SinkNodeModel	this	m:010F	0
+e!	0022E	m:010F
+c	00231	0	23	0	23	0	m:0117
+l!	00231	00291	r:q2.SourceNode	this	m:0117	0
+l!	00231	00291	i	numChannels	m:0117	1
+c	00235	0	24	0	24	0	m:0117
+c	0023C	0	26	0	26	0	m:0117
+l	0023E	00253	i	i	m:0117	2
+c	00242	0	27	0	27	0	m:0117
+c	0024E	0	26	0	26	0	m:0117
+c	00253	0	29	0	29	0	m:0117
+c	00258	0	30	0	30	0	m:0117
+c	0025D	0	32	0	32	0	m:0117
+l	0025F	00278	i	i	m:0117	2
+c	00263	0	33	0	33	0	m:0117
+c	00269	0	34	0	34	0	m:0117
+c	00273	0	32	0	32	0	m:0117
+c	00278	0	37	0	37	0	m:0117
+c	0027C	0	38	0	38	0	m:0117
+c	00284	0	39	0	39	0	m:0117
+c	0028C	0	40	0	40	0	m:0117
+c	00290	0	41	0	41	0	m:0117
+e!	00292	m:0117
+c	00295	0	112	0	112	0	m:0149
+l	00295	00299	r:q2.SourceNode	this	m:0149	0
+e!	0029A	m:0149
+c	0029D	0	129	0	129	0	m:014D
+l	0029D	002BD	r:q2.SourceNode	this	m:014D	0
+l	0029F	002BB	i	i	m:014D	1
+c	002A6	0	131	0	131	0	m:014D
+c	002AE	0	132	0	132	0	m:014D
+c	002B4	0	133	0	133	0	m:014D
+c	002B6	0	129	0	129	0	m:014D
+c	002BB	0	136	0	136	0	m:014D
+e!	002BE	m:014D
+c	002C1	0	116	0	116	0	m:015F
+l	002C1	002DB	r:q2.SourceNode	this	m:015F	0
+c	002C5	0	117	0	117	0	m:015F
+l	002C5	002DB	l	next	m:015F	1
+c	002D5	0	118	0	118	0	m:015F
+c	002D9	0	120	0	120	0	m:015F
+e!	002DC	m:015F
+c	002DF	0	87	0	87	0	m:016E
+l	002DF	0033C	r:q2.SourceNode	this	m:016E	0
+l	002DF	0033C	l	time	m:016E	1
+c	002E5	0	88	0	88	0	m:016E
+l	002E5	0033C	i	channel	m:016E	3
+c	002E9	0	90	0	90	0	m:016E
+l	002EB	0032D	i	i	m:016E	4
+c	002F2	0	91	0	91	0	m:016E
+c	002FB	0	93	0	93	0	m:016E
+l	002FB	00328	i	nextChannel	m:016E	5
+c	0030F	0	94	0	94	0	m:016E
+c	00313	0	98	0	98	0	m:016E
+c	00326	0	99	0	99	0	m:016E
+c	00328	0	90	0	90	0	m:016E
+c	0032D	0	103	0	103	0	m:016E
+c	00337	0	104	0	104	0	m:016E
+c	0033B	0	105	0	105	0	m:016E
+e	0033C	m:016E
+c	0033F	0	108	0	108	0	m:019E
+l	0033F	00343	r:q2.SourceNode	this	m:019E	0
+e	00344	m:019E
+c	00347	0	44	0	44	0	m:01A2
+l!	00347	00372	r:q2.SourceNode	this	m:01A2	0
+l!	00347	00372	l	time	m:01A2	1
+l	00347	00372	i	n	m:01A2	3
+c	00353	0	45	0	45	0	m:01A2
+c	0035C	0	46	0	46	0	m:01A2
+c	00366	0	47	0	47	0	m:01A2
+c	0036C	0	49	0	49	0	m:01A2
+c	00371	0	51	0	51	0	m:01A2
+e!	00372	m:01A2
+c	00375	0	54	0	54	0	m:01B9
+l!	00375	003FD	r:q2.SourceNode	this	m:01B9	0
+l	00375	003FD	l	time	m:01B9	1
+c	0037D	0	56	0	56	0	m:01B9
+l	0037F	003F0	i	i	m:01B9	3
+c	00386	0	57	0	57	0	m:01B9
+c	00391	0	59	0	59	0	m:01B9
+l	00391	003EB	l	fireTime	m:01B9	4
+c	0039B	0	60	0	60	0	m:01B9
+c	003A1	0	62	0	62	0	m:01B9
+c	003AB	0	63	0	63	0	m:01B9
+c	003B1	0	64	0	64	0	m:01B9
+c	003B8	0	67	0	67	0	m:01B9
+c	003C2	0	68	0	68	0	m:01B9
+l	003C2	003D3	l	length	m:01B9	6
+c	003CC	0	69	0	69	0	m:01B9
+c	003D3	0	75	0	75	0	m:01B9
+c	003E6	0	76	0	76	0	m:01B9
+c	003EB	0	56	0	56	0	m:01B9
+c	003F0	0	82	0	82	0	m:01B9
+c	003F7	0	83	0	83	0	m:01B9
+c	003FC	0	84	0	84	0	m:01B9
+e!	003FE	m:01B9
+c	0040B	2	44	0	44	0	m:01FF
+c	00416	2	49	0	49	0	m:01FF
+c	00420	2	54	0	54	0	m:01FF
+c	0042A	2	59	0	59	0	m:01FF
+c	00430	2	76	0	76	0	m:01FF
+c	00434	2	80	0	80	0	m:01FF
+c	00440	2	83	0	83	0	m:01FF
+c	0044A	2	90	0	90	0	m:01FF
+c	00454	2	97	0	97	0	m:01FF
+c	0045E	2	105	0	105	0	m:01FF
+c	00464	2	106	0	106	0	m:01FF
+c	0046C	2	107	0	107	0	m:01FF
+c	00477	2	108	0	108	0	m:01FF
+c	0047F	2	109	0	109	0	m:01FF
+c	00488	2	112	0	112	0	m:01FF
+c	0048B	2	115	0	115	0	m:01FF
+c	00490	2	116	0	116	0	m:01FF
+e	00492	m:01FF
+c	00495	2	13	0	13	0	m:0249
+l!	00495	00496	r:q2mote.MySourceNode	this	m:0249	0
+e!	00496	m:0249
+c	00499	2	254	0	254	0	m:024B
+l	00499	004D9	i	channel	m:024B	0
+c	004A0	2	257	0	257	0	m:024B
+c	004A8	2	258	0	258	0	m:024B
+c	004B3	2	260	0	260	0	m:024B
+c	004BF	2	261	0	261	0	m:024B
+c	004CB	2	262	0	262	0	m:024B
+c	004D8	2	263	0	263	0	m:024B
+e	004DA	m:024B
+c	004DD	2	176	0	176	0	m:026D
+c	004E3	2	178	0	178	0	m:026D
+c	004EA	2	179	0	179	0	m:026D
+l	004EA	0057E	l	wakeupTime	m:026D	0
+c	004F3	2	180	0	180	0	m:026D
+c	004FE	2	184	0	184	0	m:026D
+c	00504	2	185	0	185	0	m:026D
+c	00508	2	186	0	186	0	m:026D
+l	00508	0050E	i	sendChannel	m:026D	2
+c	0050E	2	188	0	188	0	m:026D
+c	00515	2	191	0	191	0	m:026D
+l	00515	0057E	i	sendChannel	m:026D	2
+c	00519	2	193	0	193	0	m:026D
+c	0051F	2	194	0	194	0	m:026D
+c	00535	2	196	0	196	0	m:026D
+c	00539	2	197	0	197	0	m:026D
+c	0053F	2	200	0	200	0	m:026D
+c	00545	2	204	0	204	0	m:026D
+c	0054C	2	206	0	206	0	m:026D
+l	0054C	0057D	i	readChannel	m:026D	3
+c	00550	2	207	0	207	0	m:026D
+c	00556	2	208	0	208	0	m:026D
+c	00568	2	209	0	209	0	m:026D
+c	0056E	2	211	0	211	0	m:026D
+c	00573	2	213	0	213	0	m:026D
+c	00579	2	214	0	214	0	m:026D
+c	0057D	2	217	0	217	0	m:026D
+e	0057E	m:026D
+c	00581	2	132	0	132	0	m:02BF
+l	00581	005D4	i	flags	m:02BF	0
+l	00581	005D4	c[]	data	m:02BF	1
+l	00581	005D4	i	len	m:02BF	2
+l	00581	005D4	i	info	m:02BF	3
+l	00581	005D4	l	time	m:02BF	4
+c	00584	2	134	0	134	0	m:02BF
+c	00592	2	135	0	135	0	m:02BF
+c	00594	2	139	0	139	0	m:02BF
+c	005A4	2	140	0	140	0	m:02BF
+c	005A6	2	143	0	143	0	m:02BF
+c	005AA	2	147	0	147	0	m:02BF
+c	005B0	2	148	0	148	0	m:02BF
+l	005B0	005C9	l	fireTime	m:02BF	6
+c	005B7	2	150	0	150	0	m:02BF
+l	005B7	005C9	i	n	m:02BF	8
+c	005C1	2	151	0	151	0	m:02BF
+c	005C9	2	152	0	152	0	m:02BF
+c	005CB	2	154	0	154	0	m:02BF
+c	005CF	2	158	0	158	0	m:02BF
+c	005D2	2	159	0	159	0	m:02BF
+e	005D4	m:02BF
+c	005D7	2	123	0	123	0	m:02EA
+l	005D7	005E5	c	param	m:02EA	0
+l	005D7	005E5	l	time	m:02EA	1
+c	005E1	2	124	0	124	0	m:02EA
+c	005E4	2	125	0	125	0	m:02EA
+e	005E6	m:02EA
+c	005E9	2	269	0	269	0	m:02F3
+l	005E9	005F5	c	led	m:02F3	0
+c	005F4	2	270	0	270	0	m:02F3
+e	005F6	m:02F3
+c	005F9	2	229	0	229	0	m:02FB
+l	005F9	0061E	i	channel	m:02FB	0
+c	00602	2	230	0	230	0	m:02FB
+c	00604	2	233	0	233	0	m:02FB
+c	00609	2	234	0	234	0	m:02FB
+c	0060F	2	235	0	235	0	m:02FB
+c	00611	2	238	0	238	0	m:02FB
+c	00616	2	239	0	239	0	m:02FB
+c	00618	2	241	0	241	0	m:02FB
+c	0061C	2	242	0	242	0	m:02FB
+e	0061E	m:02FB
+c	00621	2	166	0	166	0	m:030F
+l	00621	0062A	i	flags	m:030F	0
+l	00621	0062A	c[]	data	m:030F	1
+l	00621	0062A	i	len	m:030F	2
+l	00621	0062A	i	info	m:030F	3
+l	00621	0062A	l	time	m:030F	4
+c	00625	2	167	0	167	0	m:030F
+c	00628	2	168	0	168	0	m:030F
+e	0062A	m:030F
+S	C:/Users/Matthew/eclipse-workspace/embs_assessment/src/q2/SourceNode.java
+:	package q2;
+:	
+:	/**
+:	 * This class represents the logic of the source node, when to fire and to which channel etc.
+:	 */
+:	public class SourceNode {
+:	
+:	    private static final int DEFAULT_LISTENING_TIME =
+:	            SinkNodeModel.MAX_T + SinkNodeModel.MIN_T;
+:	
+:	    private final SinkNodeModel[] sinkNodes;
+:	    private final byte[] fireQueue;
+:	    private final long[] prevReceptionPhase;
+:	
+:	    private int numChannels;
+:	
+:	    private int currentChannel;
+:	    private long nextFire;
+:	    private long finishListeningTime;
+:	    private boolean extendedListeningTime;
+:	
+:	    public SourceNode(int numChannels) {
+:	        this.numChannels = numChannels;
+:	        this.sinkNodes = new SinkNodeModel[numChannels];
+:	
+:	        for (int i = 0; i < numChannels; i++)
+:	            this.sinkNodes[i] = new SinkNodeModel();
+:	
+:	        this.fireQueue = new byte[numChannels];
+:	        this.prevReceptionPhase = new long[numChannels];
+:	
+:	        for (int i = 0; i < numChannels; i++) {
+:	            fireQueue[i] = 0;
+:	            prevReceptionPhase[i] = 0;
+:	        }
+:	
+:	        currentChannel = 0;
+:	        nextFire = -1;
+:	        finishListeningTime = DEFAULT_LISTENING_TIME;
+:	        extendedListeningTime = false;
+:	    }
+:	
+:	    public void readBeacon(long time, int n) {
+:	        sinkNodes[currentChannel].readBeacon(time, n);
+:	        if (n != 1 && !extendedListeningTime) {
+:	            finishListeningTime = time + SinkNodeModel.MAX_T;
+:	            extendedListeningTime = true;
+:	        } else {
+:	            changeChannel(time);
+:	        }
+:	    }
+:	
+:	    public void registerNextFire(long time) {
+:	        nextFire = -1;
+:	
+:	        for (int i = 0; i < getNumChannels(); i++) {
+:	            long fireTime = sinkNodes[i].calcNextRxPhase(time);
+:	
+:	            if (fireTime > 0) {
+:	                if (fireTime <= time) {
+:	                    //queue new fire time for node rx phase
+:	                    if (fireTime != prevReceptionPhase[i]) {
+:	                        fireQueue[i] = 1;
+:	                        prevReceptionPhase[i] = fireTime;
+:	                    }
+:	
+:	                    long length = sinkNodes[i].totalProtocolLength();
+:	                    if (length != 0) {
+:	                        fireTime += length;
+:	                    } else {
+:	                        continue;
+:	                    }
+:	                }
+:	
+:	                if (nextFire == -1 || fireTime < nextFire) {
+:	                    nextFire = fireTime;
+:	                }
+:	            }
+:	        }
+:	
+:	        //change channel after the default listening period
+:	        if (time >= finishListeningTime)
+:	            changeChannel(time);
+:	    }
+:	
+:	    private void changeChannel(long time) {
+:	        int channel = currentChannel + 1;
+:	        currentChannel = -1;
+:	
+:	        for (int i = 0; i < getNumChannels(); i++) {
+:	            int nextChannel = (channel + i) % getNumChannels();
+:	
+:	            if (!sinkNodes[nextChannel].hasT() || !sinkNodes[nextChannel].hasN()) {
+:	                currentChannel = nextChannel;
+:	
+:	                //if the channel in question is going to fire a beacon before the default listening time is up,
+:	                // we can switch to this channel and break the search loop.
+:	                if (sinkNodes[nextChannel].calcNextBeacon(time) < time + DEFAULT_LISTENING_TIME)
+:	                    break;
+:	            }
+:	        }
+:	
+:	        finishListeningTime = time + DEFAULT_LISTENING_TIME;
+:	        extendedListeningTime = false;
+:	    }
+:	
+:	    private int getNumChannels() {
+:	        return this.numChannels;
+:	    }
+:	
+:	    public int getCurrentChannel() {
+:	        return this.currentChannel;
+:	    }
+:	
+:	    public long getNextFireTime() {
+:	        long next = nextFire;
+:	        if (next == -1 || finishListeningTime < next) {
+:	            next = finishListeningTime;
+:	        }
+:	        return next;
+:	    }
+:	
+:	    /**
+:	     * Determine which channel to fire from the queue of things to fire.
+:	     *
+:	     * @return int Channel id to fire
+:	     */
+:	    public int getFireChannel() {
+:	        for (int i = 0; i < getNumChannels(); i++) {
+:	            //if the channel is waiting to be fired, return the channel id and zero the entry in the fireQueue array.
+:	            if (fireQueue[i] != 0) {
+:	                fireQueue[i] = 0;
+:	                return i;
+:	            }
+:	        }
+:	        return -1;
+:	    }
+:	}
+S	C:/Users/Matthew/eclipse-workspace/embs_assessment/src/q2/SinkNodeModel.java
+:	package q2;
+:	
+:	/**
+:	 * This class handles computing the sink node parameters given sequences of beacons.
+:	 * It then uses the parameters to calculate the respective reception phases on each firing of the node.
+:	 */
+:	public class SinkNodeModel {
+:	
+:	    public static final int MAX_T = 1500;
+:	    public static final int MIN_T = 250;
+:	    public static final int MIN_N = 2;
+:	    private static final int MAX_N = 10;
+:	    /**
+:	     * Two vars to store the previous values of n and t.
+:	     */
+:	    private int prevN;
+:	    private long prevTime;
+:	    private int bestN;
+:	    private long bestT;
+:	    private boolean correctT;
+:	    private boolean correctN;
+:	
+:	    public SinkNodeModel() {
+:	        prevN = 0;
+:	        prevTime = 0;
+:	        bestN = 1;
+:	        bestT = 0;
+:	        correctN = false;
+:	        correctT = false;
+:	    }
+:	
+:	    public void readBeacon(long time, int n) {
+:	        long timeGap = time - prevTime;
+:	
+:	        if (n > bestN) {
+:	            bestN = n;
+:	        }
+:	
+:	        int nDiff = prevN - n;
+:	        if (prevN != 0 && timeGap > 0) {
+:	
+:	            int minProtocolLength = (11 + bestN) * MIN_T;
+:	            if (nDiff > 0 && timeGap < minProtocolLength) {
+:	                bestT = timeGap / nDiff;
+:	                correctT = true;
+:	            } else if (!correctT) {
+:	
+:	                if (nDiff > 0 && timeGap < nDiff * MAX_T) {
+:	                    bestT = timeGap / nDiff;
+:	                } else if (bestN == 1) {
+:	                    calcTForNEqual1(timeGap);
+:	                }
+:	            }
+:	
+:	            if (correctT) {
+:	                calcN(timeGap, nDiff);
+:	            }
+:	        }
+:	        prevN = n;
+:	        prevTime = time;
+:	    }
+:	
+:	
+:	    private void calcN(long timeGap, int nDiff) {
+:	        int beaconDiff = (int)(timeGap / bestT) - nDiff;
+:	        if (11 + bestN <= beaconDiff && beaconDiff <= 11 + MAX_N) {
+:	            bestN = beaconDiff - 11;
+:	            correctN = true;
+:	        }
+:	    }
+:	
+:	    /**
+:	     * Calculate t when n=1 by dividing the time gap by 12
+:	     * @param timeGap the time between the current beacon being read and the prevTime.
+:	     */
+:	    private void calcTForNEqual1(long timeGap) {
+:	        long t = timeGap / 12;
+:	        if ((bestT == 0 || t < bestT) && (t > MIN_T && t < MAX_T))
+:	            bestT = t;
+:	    }
+:	
+:	    public boolean hasN() {
+:	        return correctN;
+:	    }
+:	
+:	    public boolean hasT() {
+:	        return correctT;
+:	    }
+:	
+:	    private long nextRxPhaseStart(long protocolLength, long n) {
+:	        return (n + protocolLength) / protocolLength * protocolLength;
+:	    }
+:	
+:	    public long calcNextRxPhase(long time) {
+:	        long rxPhaseTime = 0;
+:	
+:	        if (prevN != 0 && bestT != 0) {
+:	            long currentPhase = prevTime + prevN * bestT + 20;
+:	            long phaseLength = bestT - 20;
+:	            long protocolLength = (11 + bestN) * bestT;
+:	
+:	            if (currentPhase + phaseLength > time) {
+:	                rxPhaseTime = currentPhase;
+:	            } else if (correctN) {
+:	                rxPhaseTime = currentPhase + nextRxPhaseStart(protocolLength, (time - currentPhase - phaseLength));
+:	            }
+:	        }
+:	        return rxPhaseTime;
+:	    }
+:	
+:	    public long totalProtocolLength() {
+:	        return (11 + bestN) * bestT;
+:	    }
+:	
+:	    /**
+:	     * This method is used when selecting which channel to switch to.
+:	     * <p>
+:	     * If we can calculate when the next beacon is to arrive as a minimum,
+:	     * we can switch to that channel with high confidence it will produce a beacon soon.
+:	     * @param time current time.
+:	     * @return an integer representing either the current time or the time a beacon could arrive as a minimum.
+:	     */
+:	    public long calcNextBeacon(long time) {
+:	        if (correctN && correctT)
+:	            return 0;
+:	
+:	        if (!correctT)
+:	            return time;
+:	
+:	        long nextBeacon = prevTime + (11 + prevN) * bestT - 500;
+:	        if (time >= nextBeacon)
+:	            return time;
+:	
+:	        return nextBeacon;
+:	    }
+:	}
+S	C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote\MySourceNode.java
+:	package q2mote;
+:	
+:	import com.ibm.saguaro.system.*;
+:	import q2.SourceNode;
+:	
+:	/**
+:	 * A Source node implemented with MoteRunner
+:	 * <p>
+:	 * Yellow LED = Source has initialized (always on)
+:	 * Green LED  = Blinked when a beacon is received
+:	 * Red LED    = Blinked when a packet is transmitted
+:	 */
+:	public final class MySourceNode {
+:	    private static final byte YELLOW_LED = (byte) 0;
+:	    private static final byte GREEN_LED = (byte) 1;
+:	    private static final byte RED_LED = (byte) 2;
+:	
+:	    private static final byte LED_OFF = (byte) 0;
+:	    private static final byte LED_ON = (byte) 1;
+:	
+:	    /**
+:	     * Number of channels
+:	     */
+:	    private static final int NUM_CHANNELS = 3;
+:	
+:	    /**
+:	     * Number to add to the channel id to get the PAN id
+:	     */
+:	    private static final int PAN_ID_OFFSET = 0x11;
+:	
+:	    /**
+:	     * The short address of this source node
+:	     */
+:	    private static final int MY_SHORT_ADDRESS = 0x42;
+:	
+:	    /**
+:	     * Constant payload to send
+:	     */
+:	    private static final byte PAYLOAD = 0x11;
+:	
+:	    /**
+:	     * The controller for the source node
+:	     */
+:	    private static final SourceNode sourceNode = new SourceNode(NUM_CHANNELS);
+:	
+:	    /**
+:	     * Radio reference
+:	     */
+:	    private static final Radio radio = new Radio();
+:	
+:	    /**
+:	     * Wakeup timer
+:	     */
+:	    private static final Timer timer = new Timer();
+:	
+:	    /**
+:	     * Transmit buffer
+:	     */
+:	    private static final byte[] xmit = new byte[12];
+:	
+:	    /**
+:	     * If true, we are currently receiving or transmitting
+:	     */
+:	    private static boolean rxOn, txOn;
+:	
+:	    /**
+:	     * Channel to send on first.
+:	     * <p>
+:	     * If we try to send on a channel which we are not currently on (fairly
+:	     * likely), this variable is filled with the channel number so we know what
+:	     * it is after we've finished changing the channel.
+:	     * <p>
+:	     * This variable is -1 if there is no pending send channel (ie ask the
+:	     * controller for one instead).
+:	     */
+:	    private static int pendingSendChannel = -1;
+:	
+:	    static {
+:	        // Open the radio
+:	        radio.open(Radio.DID, null, 0, 0);
+:	
+:	        // Register radio and timer callbacks
+:	        radio.setRxHandler(new DevCallback(null) {
+:	            @Override
+:	            public int invoke(int flags, byte[] data, int len, int info, long time) {
+:	                return rxBeacon(flags, data, len, info, time);
+:	            }
+:	        });
+:	
+:	        radio.setTxHandler(new DevCallback(null) {
+:	            @Override
+:	            public int invoke(int flags, byte[] data, int len, int info, long time) {
+:	                return txComplete(flags, data, len, info, time);
+:	            }
+:	        });
+:	
+:	        timer.setCallback(new TimerEvent(null) {
+:	            @Override
+:	            public void invoke(byte param, long time) {
+:	                timerFire(param, time);
+:	            }
+:	        });
+:	
+:	        // Initialize radio and xmit fields for the first channel
+:	        xmit[0] = Radio.FCF_DATA;
+:	        xmit[1] = Radio.FCA_SRC_SADDR | Radio.FCA_DST_SADDR;
+:	        Util.set16le(xmit, 9, MY_SHORT_ADDRESS);
+:	        xmit[11] = PAYLOAD;
+:	        changeChannel(sourceNode.getCurrentChannel());
+:	
+:	        // Enter read mode and enable timer
+:	        handleControllerStateChange();
+:	
+:	        // Turn Yellow LED on once we've finished
+:	        LED.setState(YELLOW_LED, LED_ON);
+:	    }
+:	
+:	    /**
+:	     * Timer callback
+:	     */
+:	    static void timerFire(byte param, long time) {
+:	        // Send a wakeup event and handle any sends or channel changes
+:	        sourceNode.registerNextFire(Time.currentTime(Time.MILLISECS));
+:	        handleControllerStateChange();
+:	    }
+:	
+:	    /**
+:	     * Radio beacon received callback
+:	     */
+:	    static int rxBeacon(int flags, byte[] data, int len, int info, long time) {
+:	        // Handle new beacon packets
+:	        if (data != null) {
+:	            // Validate beacon
+:	            if (len != 12 || (data[0] & Radio.FCF_TYPE) != Radio.FCF_BEACON)
+:	                return 0;
+:	
+:	            // Ensure we're receiving a beacon for the right channel
+:	            //  If a packet is sent just before we change channels, we might receive it
+:	            if (Util.get16le(data, 3) != PAN_ID_OFFSET + sourceNode.getCurrentChannel())
+:	                return 0;
+:	
+:	            // Indicate we received a beacon
+:	            toggleLED(GREEN_LED);
+:	
+:	            // Notify controller
+:	            //  We send a wakeupEvent as well to ensure all pending sends are refreshed now
+:	            long fireTime = Time.currentTime(Time.MILLISECS);
+:	            int n = data[11];
+:	
+:	            sourceNode.readBeacon(fireTime, n);
+:	            sourceNode.registerNextFire(fireTime);
+:	        } else {
+:	            // Receiving finished
+:	            rxOn = false;
+:	        }
+:	
+:	        // Handle any sends or channel changes
+:	        handleControllerStateChange();
+:	        return 0;
+:	    }
+:	
+:	    /**
+:	     * Radio transmit complete callback
+:	     */
+:	    static int txComplete(int flags, byte[] data, int len, int info, long time) {
+:	        txOn = false;
+:	        handleControllerStateChange();
+:	        return 0;
+:	    }
+:	
+:	    /**
+:	     * Handles any changes in the controller state (sends and channel hopping)
+:	     */
+:	    private static void handleControllerStateChange() {
+:	        // Reschedule timer event
+:	        timer.cancelAlarm();
+:	
+:	        long wakeupTime = sourceNode.getNextFireTime();
+:	        if (wakeupTime > 0)
+:	            timer.setAlarmTime(Time.toTickSpan(Time.MILLISECS, wakeupTime));
+:	
+:	        // See if there is anything to transmit
+:	        int sendChannel;
+:	        if (pendingSendChannel != -1) {
+:	            sendChannel = pendingSendChannel;
+:	            pendingSendChannel = -1;
+:	        } else {
+:	            sendChannel = sourceNode.getFireChannel();
+:	        }
+:	
+:	        if (sendChannel != -1) {
+:	            // Switch channel and send
+:	            if (tryChangeChannel(sendChannel)) {
+:	                radio.transmit(Device.ASAP | Radio.TXMODE_POWER_MAX | Radio.TXMODE_CCA,
+:	                        xmit, 0, xmit.length, 0);
+:	                toggleLED(RED_LED);
+:	                txOn = true;
+:	            } else {
+:	                // Wait for an rxOff or txOff event
+:	                pendingSendChannel = sendChannel;
+:	            }
+:	        } else {
+:	            // Change channel to read on
+:	            int readChannel = sourceNode.getCurrentChannel();
+:	
+:	            if (readChannel != -1) {
+:	                if (tryChangeChannel(readChannel)) {
+:	                    radio.startRx(Device.ASAP | Device.RX4EVER, 0, 0);
+:	                    rxOn = true;
+:	                }
+:	            } else if (rxOn) {
+:	                // Nothing more to read, so switch the radio off
+:	                radio.stopRx();
+:	                rxOn = false;
+:	            }
+:	        }
+:	    }
+:	
+:	    /**
+:	     * Try and change the radio channel
+:	     * <p>
+:	     * If the radio is on, it begins the turn off procedure.
+:	     *
+:	     * @param channel channel to change to
+:	     * @return true if the channel was immediately changed
+:	     */
+:	    private static boolean tryChangeChannel(int channel) {
+:	        // Do nothing if we're already on the right channel
+:	        if (radio.getChannel() == channel)
+:	            return true;
+:	
+:	        // We can't do anything if the receiver or transmitter are on
+:	        if (rxOn) {
+:	            radio.stopRx();
+:	            return false;
+:	        }
+:	
+:	        if (txOn)
+:	            return false;
+:	
+:	        changeChannel(channel);
+:	        return true;
+:	    }
+:	
+:	    /**
+:	     * Forcefully change the radio channel
+:	     *
+:	     * @param channel channel to change to
+:	     */
+:	    private static void changeChannel(int channel) {
+:	        // Although the documentation says you do not need to do this,
+:	        // the radio on IRIS motes seems to need to be turned off
+:	        // completely before channel changes will take effect.
+:	        radio.setState(Device.S_OFF);
+:	
+:	        // Change the channel
+:	        radio.setChannel((byte) channel);
+:	        radio.setPanId(PAN_ID_OFFSET + channel, true);
+:	
+:	        Util.set16le(xmit, 3, PAN_ID_OFFSET + channel); // Dest PAN
+:	        Util.set16le(xmit, 5, PAN_ID_OFFSET + channel); // Dest Address
+:	        Util.set16le(xmit, 7, PAN_ID_OFFSET + channel); // Source PAN
+:	    }
+:	
+:	    /**
+:	     * Toggles the given LED
+:	     */
+:	    private static void toggleLED(byte led) {
+:	        LED.setState(led, (byte) (1 - LED.getState(led)));
+:	    }
+:	}
