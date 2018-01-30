@@ -1,4 +1,4 @@
-package lsi.instruction;
+package q3;
 
 import ptolemy.actor.TypedAtomicActor;
 import ptolemy.actor.TypedIOPort;
