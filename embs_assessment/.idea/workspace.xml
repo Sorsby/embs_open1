@@ -29,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SourceNode.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SourceNode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+            <state relative-caret-position="527">
+              <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
               <folding>
                 <element signature="e#4635#4636#0" expanded="true" />
                 <element signature="e#4677#4678#0" expanded="true" />
@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SinkNodeModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SinkNodeModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
+            <state relative-caret-position="928">
               <caret line="111" column="119" lean-forward="false" selection-start-line="111" selection-start-column="119" selection-end-line="111" selection-end-column="119" />
               <folding />
             </state>
@@ -356,12 +356,12 @@
       <workItem from="1516840532174" duration="125000" />
       <workItem from="1516840671484" duration="77243000" />
       <workItem from="1517202099807" duration="31582000" />
-      <workItem from="1517285161782" duration="11516000" />
+      <workItem from="1517285161782" duration="11684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120466000" />
+    <option name="totallyTimeSpent" value="120634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1452" y="0" width="1115" height="1407" extended-state="0" />
@@ -683,6 +683,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="95" column="43" lean-forward="false" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="111" column="119" lean-forward="false" selection-start-line="111" selection-start-column="119" selection-end-line="111" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -694,30 +710,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/q2ptolemy/SourceNodeActor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="95" column="43" lean-forward="false" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/q2/SourceNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        <state relative-caret-position="527">
+          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
             <element signature="e#4635#4636#0" expanded="true" />
             <element signature="e#4677#4678#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/q2/SinkNodeModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="111" column="119" lean-forward="false" selection-start-line="111" selection-start-column="119" selection-end-line="111" selection-end-column="119" />
-          <folding />
         </state>
       </provider>
     </entry>

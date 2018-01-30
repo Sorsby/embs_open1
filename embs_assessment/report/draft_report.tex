@@ -173,7 +173,7 @@ An instance of SourceNode is created with a number of channels provided to the c
 \\
 When the actor is initialised it begins reading beacons from a sink node channel for a specified amount of time, given by the constant DEFAULT_LISTENING_TIME (SourceNode, 11), when we read a beacon we extend the time to try get another and thus calculate the sink parameters. If the time expires we switch nodes and do the same again - this is how I sync to multiple nodes effectively.
 \\
-When n=1 we have to wait an entire protocol length to read another beacon, so we can switch away and come back later - we then use the length between the iterations to calculate the sink parameters.
+When n=1 we have to wait an entire protocol length to read another beacon, so we can switch away and come back later (SourceNode, readBeacon, 64). We then use the length between the iterations to calculate the sink parameters (SinkNodeModel, calcTForNEqual1, 115-119) and (SinkNodeModel, calcN, 102-109).
 
 %------------------------------------------------
 
