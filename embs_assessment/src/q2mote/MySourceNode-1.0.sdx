@@ -1,4 +1,4 @@
-A!	MySourceNode-1.0.64637	2.0	Java
+A!	MySourceNode-1.0.65278	2.0	Java
 
 X	c:01/000	com.ibm.saguaro.system.Assembly
 X	c:01/001	com.ibm.saguaro.system.Util
@@ -79,8 +79,6 @@ R	timer	r:com.ibm.saguaro.system.Timer	2	2
 R	xmit	c[]	2	3
 F	rxEnabled	z	2	0
 G	GREEN_LED	c	2	1
-G	LED_OFF	c	2	0
-G	LED_ON	c	2	1
 G	MY_SHORT_ADDRESS	i	2	66
 G	NUM_CHANNELS	i	2	3
 G	PAN_ID_OFFSET	i	2	17
@@ -295,110 +293,110 @@ c	003F0	0	82	0	82	0	m:01B9
 c	003F7	0	83	0	83	0	m:01B9
 c	003FC	0	84	0	84	0	m:01B9
 e!	003FE	m:01B9
-c	0040B	2	45	0	45	0	m:01FF
-c	00416	2	47	0	47	0	m:01FF
-c	00420	2	52	0	52	0	m:01FF
-c	0042A	2	57	0	57	0	m:01FF
-c	00430	2	66	0	66	0	m:01FF
-c	0043C	2	69	0	69	0	m:01FF
-c	00446	2	77	0	77	0	m:01FF
-c	00450	2	85	0	85	0	m:01FF
-c	0045A	2	93	0	93	0	m:01FF
-c	00460	2	94	0	94	0	m:01FF
-c	00468	2	95	0	95	0	m:01FF
-c	00473	2	96	0	96	0	m:01FF
-c	0047B	2	97	0	97	0	m:01FF
-c	00484	2	98	0	98	0	m:01FF
-c	00487	2	100	0	100	0	m:01FF
-c	0048C	2	101	0	101	0	m:01FF
+c	0040B	2	24	0	24	0	m:01FF
+c	00416	2	41	0	41	0	m:01FF
+c	00420	2	42	0	42	0	m:01FF
+c	0042A	2	47	0	47	0	m:01FF
+c	00430	2	56	0	56	0	m:01FF
+c	0043C	2	59	0	59	0	m:01FF
+c	00446	2	67	0	67	0	m:01FF
+c	00450	2	75	0	75	0	m:01FF
+c	0045A	2	83	0	83	0	m:01FF
+c	00460	2	84	0	84	0	m:01FF
+c	00468	2	85	0	85	0	m:01FF
+c	00473	2	86	0	86	0	m:01FF
+c	0047B	2	89	0	89	0	m:01FF
+c	00484	2	91	0	91	0	m:01FF
+c	00487	2	94	0	94	0	m:01FF
+c	0048C	2	95	0	95	0	m:01FF
 e	0048E	m:01FF
-c	00491	2	13	0	13	0	m:0247
+c	00491	2	10	0	10	0	m:0247
 l!	00491	00492	r:q2mote.MySourceNode	this	m:0247	0
 e!	00492	m:0247
-c	00495	2	13	0	13	0	m:0249
+c	00495	2	10	0	10	0	m:0249
 l	00495	0049B	c	x0	m:0249	0
 l	00495	0049B	l	x1	m:0249	1
 e	0049C	m:0249
-c	0049F	2	13	0	13	0	m:024E
+c	0049F	2	10	0	10	0	m:024E
 l	0049F	004A9	i	x0	m:024E	0
 l	0049F	004A9	c[]	x1	m:024E	1
 l	0049F	004A9	i	x2	m:024E	2
 l	0049F	004A9	i	x3	m:024E	3
 l	0049F	004A9	l	x4	m:024E	4
 e	004AA	m:024E
-c	004AD	2	13	0	13	0	m:0255
+c	004AD	2	10	0	10	0	m:0255
 l	004AD	004B7	i	x0	m:0255	0
 l	004AD	004B7	c[]	x1	m:0255	1
 l	004AD	004B7	i	x2	m:0255	2
 l	004AD	004B7	i	x3	m:0255	3
 l	004AD	004B7	l	x4	m:0255	4
 e	004B8	m:0255
-c	004BB	2	137	0	137	0	m:025C
-c	004C1	2	139	0	139	0	m:025C
-c	004C8	2	140	0	140	0	m:025C
+c	004BB	2	131	0	131	0	m:025C
+c	004C1	2	133	0	133	0	m:025C
+c	004C8	2	134	0	134	0	m:025C
 l	004C8	00545	l	wakeupTime	m:025C	0
-c	004D1	2	141	0	141	0	m:025C
-c	004DC	2	143	0	143	0	m:025C
-c	004E3	2	145	0	145	0	m:025C
+c	004D1	2	135	0	135	0	m:025C
+c	004DC	2	137	0	137	0	m:025C
+c	004E3	2	139	0	139	0	m:025C
 l	004E3	00545	i	sendChannel	m:025C	2
-c	004E7	2	146	0	146	0	m:025C
-c	004EB	2	147	0	147	0	m:025C
-c	00501	2	149	0	149	0	m:025C
-c	0050E	2	152	0	152	0	m:025C
-c	00515	2	154	0	154	0	m:025C
+c	004E7	2	140	0	140	0	m:025C
+c	004EB	2	141	0	141	0	m:025C
+c	00501	2	143	0	143	0	m:025C
+c	0050E	2	146	0	146	0	m:025C
+c	00515	2	148	0	148	0	m:025C
 l	00515	00544	i	readChannel	m:025C	3
-c	00519	2	155	0	155	0	m:025C
-c	0051D	2	156	0	156	0	m:025C
-c	0052F	2	157	0	157	0	m:025C
-c	00535	2	158	0	158	0	m:025C
-c	0053A	2	159	0	159	0	m:025C
-c	00540	2	160	0	160	0	m:025C
-c	00544	2	163	0	163	0	m:025C
+c	00519	2	149	0	149	0	m:025C
+c	0051D	2	150	0	150	0	m:025C
+c	0052F	2	151	0	151	0	m:025C
+c	00535	2	152	0	152	0	m:025C
+c	0053A	2	153	0	153	0	m:025C
+c	00540	2	154	0	154	0	m:025C
+c	00544	2	157	0	157	0	m:025C
 e	00546	m:025C
-c	00549	2	114	0	114	0	m:02A3
+c	00549	2	108	0	108	0	m:02A3
 l	00549	005A3	i	flags	m:02A3	0
 l	00549	005A3	c[]	data	m:02A3	1
 l	00549	005A3	i	len	m:02A3	2
 l	00549	005A3	i	info	m:02A3	3
 l	00549	005A3	l	time	m:02A3	4
-c	0054C	2	115	0	115	0	m:02A3
-c	0055A	2	116	0	116	0	m:02A3
-c	0055C	2	118	0	118	0	m:02A3
-c	0056C	2	119	0	119	0	m:02A3
-c	0056E	2	121	0	121	0	m:02A3
-c	00579	2	123	0	123	0	m:02A3
-c	0057F	2	124	0	124	0	m:02A3
-l	0057F	00598	l	fireTime	m:02A3	6
-c	00586	2	126	0	126	0	m:02A3
-l	00586	00598	i	n	m:02A3	8
-c	00590	2	127	0	127	0	m:02A3
-c	00598	2	128	0	128	0	m:02A3
-c	0059A	2	129	0	129	0	m:02A3
-c	0059E	2	132	0	132	0	m:02A3
-c	005A1	2	133	0	133	0	m:02A3
+c	0054C	2	109	0	109	0	m:02A3
+c	0055A	2	110	0	110	0	m:02A3
+c	0055C	2	112	0	112	0	m:02A3
+c	0056C	2	113	0	113	0	m:02A3
+c	0056E	2	115	0	115	0	m:02A3
+c	00574	2	116	0	116	0	m:02A3
+l	00574	00598	l	fireTime	m:02A3	6
+c	0057B	2	118	0	118	0	m:02A3
+l	0057B	00598	i	n	m:02A3	8
+c	00585	2	119	0	119	0	m:02A3
+c	00590	2	121	0	121	0	m:02A3
+c	00598	2	122	0	122	0	m:02A3
+c	0059A	2	123	0	123	0	m:02A3
+c	0059E	2	126	0	126	0	m:02A3
+c	005A1	2	127	0	127	0	m:02A3
 e	005A4	m:02A3
-c	005A7	2	166	0	166	0	m:02D2
+c	005A7	2	160	0	160	0	m:02D2
 l	005A7	005E7	i	channel	m:02D2	0
-c	005AE	2	168	0	168	0	m:02D2
-c	005BA	2	169	0	169	0	m:02D2
-c	005C6	2	170	0	170	0	m:02D2
-c	005D3	2	172	0	172	0	m:02D2
-c	005DB	2	173	0	173	0	m:02D2
-c	005E6	2	174	0	174	0	m:02D2
+c	005AE	2	162	0	162	0	m:02D2
+c	005BA	2	163	0	163	0	m:02D2
+c	005C6	2	164	0	164	0	m:02D2
+c	005D3	2	166	0	166	0	m:02D2
+c	005DB	2	167	0	167	0	m:02D2
+c	005E6	2	168	0	168	0	m:02D2
 e	005E8	m:02D2
-c	005EB	2	109	0	109	0	m:02F4
+c	005EB	2	103	0	103	0	m:02F4
 l	005EB	005F9	c	param	m:02F4	0
 l	005EB	005F9	l	time	m:02F4	1
-c	005F5	2	110	0	110	0	m:02F4
-c	005F8	2	111	0	111	0	m:02F4
+c	005F5	2	104	0	104	0	m:02F4
+c	005F8	2	105	0	105	0	m:02F4
 e	005FA	m:02F4
-c	005FD	2	104	0	104	0	m:02FD
+c	005FD	2	98	0	98	0	m:02FD
 l	005FD	00602	i	flags	m:02FD	0
 l	005FD	00602	c[]	data	m:02FD	1
 l	005FD	00602	i	len	m:02FD	2
 l	005FD	00602	i	info	m:02FD	3
 l	005FD	00602	l	time	m:02FD	4
-c	00600	2	105	0	105	0	m:02FD
+c	00600	2	99	0	99	0	m:02FD
 e	00602	m:02FD
 S	C:/Users/Matthew/eclipse-workspace/embs_assessment/src/q2/SourceNode.java
 :	package q2;
@@ -683,24 +681,29 @@ S	C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote\MySourceNode.jav
 :	import q2.SourceNode;
 :	
 :	/**
-:	 * A Source node implemented with MoteRunner
-:	 * <p>
-:	 * Yellow LED = Source has initialized (always on)
-:	 * Green LED  = Blinked when a beacon is received
-:	 * Red LED    = Blinked when a packet is transmitted
+:	 * Implementation of a source node using the same logic as the ptolemy source node,
+:	 * except applied to the IRIS Motes as seen in labs.
 :	 */
 :	public final class MySourceNode {
 :	    private static final byte YELLOW_LED = (byte) 0;
 :	    private static final byte GREEN_LED = (byte) 1;
 :	    private static final byte RED_LED = (byte) 2;
 :	
-:	    private static final byte LED_OFF = (byte) 0;
-:	    private static final byte LED_ON = (byte) 1;
-:	
 :	    /**
 :	     * Channel count.
 :	     */
 :	    private static final int NUM_CHANNELS = 3;
+:	
+:	    /**
+:	     * Instance of SourceNode, created for Ptolemy task but reused here with different channels and params.
+:	     * For mote remember to change MIN_T and MIN_N.
+:	     */
+:	    private static final SourceNode sourceNode = new SourceNode(NUM_CHANNELS);
+:	
+:	    /**
+:	     * Constant arbitrary payload to transmit
+:	     */
+:	    private static final byte PAYLOAD = 0x11;
 :	
 :	    /**
 :	     * Number to add to the channel id to get the PAN id
@@ -712,22 +715,7 @@ S	C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote\MySourceNode.jav
 :	     */
 :	    private static final int MY_SHORT_ADDRESS = 0x42;
 :	
-:	    /**
-:	     * Constant arbitrary payload to transmit
-:	     */
-:	    private static final byte PAYLOAD = 0x11;
-:	
-:	    /**
-:	     * Instance of SourceNode, created for Ptolemy task but reused here with different channels and params.
-:	     * For mote remember to change MIN_T and MIN_N.
-:	     */
-:	    private static final SourceNode sourceNode = new SourceNode(NUM_CHANNELS);
-:	
 :	    private static final Radio radio = new Radio();
-:	
-:	    /**
-:	     * Firing timer
-:	     */
 :	    private static final Timer timer = new Timer();
 :	
 :	    /**
@@ -773,10 +761,14 @@ S	C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote\MySourceNode.jav
 :	        xmit[1] = Radio.FCA_SRC_SADDR | Radio.FCA_DST_SADDR;
 :	        Util.set16le(xmit, 9, MY_SHORT_ADDRESS);
 :	        xmit[11] = PAYLOAD;
+:	
+:	        //switch to an initial channel
 :	        switchChannel(sourceNode.getCurrentChannel());
+:	        //initial firing
 :	        fireSourceNode();
 :	
-:	        LED.setState(YELLOW_LED, LED_ON);
+:	        //turn on yellow led to indicate the source node is enabled.
+:	        LED.setState(YELLOW_LED, (byte)1);
 :	    }
 :	
 :	    private static int transmissionCb(int flags, byte[] data, int len, int info, long time) {
@@ -797,12 +789,12 @@ S	C:\Users\Matthew\eclipse-workspace\embs_assessment\src\q2mote\MySourceNode.jav
 :	            if (Util.get16le(data, 3) != PAN_ID_OFFSET + sourceNode.getCurrentChannel())
 :	                return 0;
 :	
-:	            LED.setState(GREEN_LED, (byte) (1 - LED.getState(GREEN_LED)));
-:	
 :	            long fireTime = Time.currentTime(Time.MILLISECS);
 :	            int n = data[11];
 :	
 :	            sourceNode.readBeacon(fireTime, n);
+:	            LED.setState(GREEN_LED, (byte) (1 - LED.getState(GREEN_LED)));
+:	
 :	            sourceNode.registerNextFire(fireTime);
 :	        } else {
 :	            rxEnabled = false;

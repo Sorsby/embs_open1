@@ -4,24 +4,29 @@ import com.ibm.saguaro.system.*;
 import q2.SourceNode;
 
 /**
- * A Source node implemented with MoteRunner
- * <p>
- * Yellow LED = Source has initialized (always on)
- * Green LED  = Blinked when a beacon is received
- * Red LED    = Blinked when a packet is transmitted
+ * Implementation of a source node using the same logic as the ptolemy source node,
+ * except applied to the IRIS Motes as seen in labs.
  */
 public final class MySourceNode {
     private static final byte YELLOW_LED = (byte) 0;
     private static final byte GREEN_LED = (byte) 1;
     private static final byte RED_LED = (byte) 2;
 
-    private static final byte LED_OFF = (byte) 0;
-    private static final byte LED_ON = (byte) 1;
-
     /**
      * Channel count.
      */
     private static final int NUM_CHANNELS = 3;
+
+    /**
+     * Instance of SourceNode, created for Ptolemy task but reused here with different channels and params.
+     * For mote remember to change MIN_T and MIN_N.
+     */
+    private static final SourceNode sourceNode = new SourceNode(NUM_CHANNELS);
+
+    /**
+     * Constant arbitrary payload to transmit
+     */
+    private static final byte PAYLOAD = 0x11;
 
     /**
      * Number to add to the channel id to get the PAN id
@@ -33,22 +38,7 @@ public final class MySourceNode {
      */
     private static final int MY_SHORT_ADDRESS = 0x42;
 
-    /**
-     * Constant arbitrary payload to transmit
-     */
-    private static final byte PAYLOAD = 0x11;
-
-    /**
-     * Instance of SourceNode, created for Ptolemy task but reused here with different channels and params.
-     * For mote remember to change MIN_T and MIN_N.
-     */
-    private static final SourceNode sourceNode = new SourceNode(NUM_CHANNELS);
-
     private static final Radio radio = new Radio();
-
-    /**
-     * Firing timer
-     */
     private static final Timer timer = new Timer();
 
     /**
@@ -100,7 +90,8 @@ public final class MySourceNode {
         //initial firing
         fireSourceNode();
 
-        LED.setState(YELLOW_LED, LED_ON);
+        //turn on yellow led to indicate the source node is enabled.
+        LED.setState(YELLOW_LED, (byte)1);
     }
 
     private static int transmissionCb(int flags, byte[] data, int len, int info, long time) {
@@ -121,12 +112,12 @@ public final class MySourceNode {
             if (Util.get16le(data, 3) != PAN_ID_OFFSET + sourceNode.getCurrentChannel())
                 return 0;
 
-            LED.setState(GREEN_LED, (byte) (1 - LED.getState(GREEN_LED)));
-
             long fireTime = Time.currentTime(Time.MILLISECS);
             int n = data[11];
 
             sourceNode.readBeacon(fireTime, n);
+            LED.setState(GREEN_LED, (byte) (1 - LED.getState(GREEN_LED)));
+
             sourceNode.registerNextFire(fireTime);
         } else {
             rxEnabled = false;
