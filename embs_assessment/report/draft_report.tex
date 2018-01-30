@@ -91,7 +91,8 @@ We can determine the rate X of actor H by producing a set of simultaneous equati
 The topology matrix for the SDF model is as follows:
 \\
 
-$\Gamma = \begin{bmatrix}
+$
+\Gamma = \begin{bmatrix}
 		2 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \cr
 		0 & 2 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \cr
 		0 & 0 & 2 & 0 & -2 & 0 & 0 & 0 & 0 \cr
@@ -108,14 +109,21 @@ This gives us the following simultaneous equations:
 \\ \\
 $
 \begin{matrix}
-2A - 2E = 0 & 2B - 2E = 0 & 2C - 2E = 0 & 2D - 2E = 0 \\
-2E - 6F = 0 & F - I = 0 & 3G - 2H = 0 & XH - 3I = 0 \\
-I - G = 0
+2A - 2E = 0 & 2B - 2E = 0 & 2C - 2E = 0 \\
+2D - 2E = 0 & 2E - 6F = 0 & F - I = 0 \\
+3G - 2H = 0 & XH - 3I = 0 & I - G = 0
 \end{matrix}
 $
-\\ \\
-Using these equations I determined that $X = 2$. Similarly, I determined the firing frequencies of the remaining actors.
 \\
+
+\begin{minipage}{0.6\textwidth}
+\begin{flushleft}
+Using these equations I determined that $X = 2$. Similarly, I determined the firing frequencies of the remaining actors, seen in the vector q:
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.2\textwidth}
+\begin{flushright}
 $
 q = \bordermatrix{~ & ~ \cr
 				A & 6 \cr
@@ -128,15 +136,23 @@ q = \bordermatrix{~ & ~ \cr
 				H & 3 \cr
 				I & 2 \cr}	
 $
+\end{flushright}
+\end{minipage}\\
 
 %------------------------------------------------
 
 \subsection{Question 2} % Sub-section
+Using the firing frequencies determined in Question 1, I was able to identify the following PASS schedule: \\
 
+a.fire(3); b.fire(3); c.fire(3); d.fire(3); e.fire(3); f.fire(1); a.fire(3); b.fire(3); c.fire(3); d.fire(3); e.fire(3); f.fire(1); g.fire(2); h.fire(3); i.fire(2);
+\\
+
+The maximum required FIFO buffer size is 6 as required and the number of firings of the actors match up with their frequencies in the vector q (Question 1).
 
 %------------------------------------------------
 
 \subsection{Question 3} % Sub-section
+For my chosen PASS schedule the number of tokens that must be initially stored in the buffer of the feedback channel c9 is \large 2.
 
 
 %------------------------------------------------

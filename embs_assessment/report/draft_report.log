@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  30 JAN 2018 15:48
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  30 JAN 2018 16:09
 entering extended mode
-**./essay_1.tex
-(essay_1.tex
+**./draft_report.tex
+(draft_report.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\miktex\tex\latex\base\article.cls"
@@ -146,8 +146,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-) (essay_1.aux)
-\openout1 = `essay_1.aux'.
+) (draft_report.aux)
+\openout1 = `draft_report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
@@ -199,9 +199,9 @@ LaTeX Font Info:    ... okay on input line 37.
 
 [1
 
-] (essay_1.toc)
+] (draft_report.toc)
 \tf@toc=\write3
-\openout3 = `essay_1.toc'.
+\openout3 = `draft_report.toc'.
 
  [1]
 Underfull \hbox (badness 10000) in paragraph at lines 91--93
@@ -209,28 +209,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--93
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--131
+Underfull \hbox (badness 10000) in paragraph at lines 94--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--131
+Underfull \hbox (badness 10000) in paragraph at lines 94--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--131
+Underfull \hbox (badness 10000) in paragraph at lines 94--118
 
  []
 
-[2] [3] (essay_1.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+[3] (draft_report.aux) ) 
 Here is how much of TeX's memory you used:
  1868 strings out of 427834
- 22705 string characters out of 3148124
+ 22765 string characters out of 3148124
  102857 words of memory out of 3000000
  5831 multiletter control sequences out of 15000+200000
  7154 words of font info for 39 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,7n,20p,205b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,20p,210b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on essay_1.pdf (4 pages).
+Output written on draft_report.pdf (4 pages).
