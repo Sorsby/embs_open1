@@ -1,4 +1,4 @@
-package lsi.q2ptolemy;
+package q2ptolemy;
 
 import ptolemy.actor.TypedAtomicActor;
 import ptolemy.actor.TypedIOPort;
@@ -8,6 +8,8 @@ import ptolemy.data.type.BaseType;
 import ptolemy.kernel.CompositeEntity;
 import ptolemy.kernel.util.IllegalActionException;
 import ptolemy.kernel.util.NameDuplicationException;
+import q2.SinkNodeModel;
+import q2.SourceNode;
 
 /**
  * This class represents a Ptolemy actor responsible for syncing with sink nodes.

@@ -1,9 +1,9 @@
-package lsi.q2ptolemy;
+package q2;
 
 /**
  * This class represents the logic of the source node, when to fire and to which channel etc.
  */
-class SourceNode {
+public class SourceNode {
 
     private static final int DEFAULT_LISTENING_TIME =
             SinkNodeModel.MAX_T + SinkNodeModel.MIN_T;
@@ -19,7 +19,7 @@ class SourceNode {
     private int finishListeningTime;
     private boolean extendedListeningTime;
 
-    SourceNode(int numChannels) {
+    public SourceNode(int numChannels) {
         this.numChannels = numChannels;
         this.sinkNodes = new SinkNodeModel[numChannels];
 

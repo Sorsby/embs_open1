@@ -1,4 +1,4 @@
-package lsi.q2ptolemy;
+package q2;
 
 /**
  * This class handles computing the sink node parameters given sequences of beacons.
@@ -20,7 +20,7 @@ public class SinkNodeModel {
     private boolean correctT;
     private boolean correctN;
 
-    SinkNodeModel() {
+    public SinkNodeModel() {
         prevN = 0;
         prevTime = 0;
         bestN = MIN_N;
