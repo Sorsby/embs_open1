@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  30 JAN 2018 17:01
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  31 JAN 2018 02:48
 entering extended mode
 **./draft_report.tex
 (draft_report.tex
@@ -146,23 +146,25 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-) (draft_report.aux)
+)
+\@float@every@table=\toks24
+ (draft_report.aux)
 \openout1 = `draft_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -204,69 +206,88 @@ LaTeX Font Info:    ... okay on input line 37.
 \openout3 = `draft_report.toc'.
 
  [1]
-Underfull \hbox (badness 10000) in paragraph at lines 91--93
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--118
+Underfull \hbox (badness 10000) in paragraph at lines 97--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--118
+Underfull \hbox (badness 10000) in paragraph at lines 97--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--118
+Underfull \hbox (badness 10000) in paragraph at lines 97--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
+Underfull \hbox (badness 10000) in paragraph at lines 142--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+
+Overfull \hbox (15.10316pt too wide) in paragraph at lines 171--173
+\TU/lmr/m/n/12 for a specified amount of time, given by the constant DEFAULT_LI
+STENING_TIME
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
 
  []
 
 
-Overfull \hbox (7.20001pt too wide) in paragraph at lines 179--180
-\TU/lmr/m/n/14.4 other beacon, so we can switch away and come back later (Sourc
-eNode,
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
+
  []
 
-[4] (draft_report.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--190
+
+ []
+
+[4] [5] (draft_report.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1868 strings out of 427834
- 22765 string characters out of 3148124
- 102857 words of memory out of 3000000
- 5831 multiletter control sequences out of 15000+200000
+ 1873 strings out of 427834
+ 22822 string characters out of 3148124
+ 102949 words of memory out of 3000000
+ 5836 multiletter control sequences out of 15000+200000
  7154 words of font info for 39 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,9n,20p,448b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,7n,20p,809b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on draft_report.pdf (5 pages).
+Output written on draft_report.pdf (6 pages).

@@ -28,6 +28,9 @@
 
 \usepackage{amsmath}
 
+\usepackage{float}
+\restylefloat{table}
+
 \linespread{1.2} % Line spacing
 
 %\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
@@ -114,16 +117,9 @@ $
 3G - 2H = 0 & XH - 3I = 0 & I - G = 0
 \end{matrix}
 $
+\\ \\
+Using these equations I determined that $X = 2$. \\ Similarly, I determined the firing frequencies of the remaining actors:
 \\
-
-\begin{minipage}{0.6\textwidth}
-\begin{flushleft}
-Using these equations I determined that $X = 2$. Similarly, I determined the firing frequencies of the remaining actors, seen in the vector q:
-\end{flushleft}
-\end{minipage}
-~
-\begin{minipage}{0.2\textwidth}
-\begin{flushright}
 $
 q = \bordermatrix{~ & ~ \cr
 				A & 6 \cr
@@ -136,8 +132,7 @@ q = \bordermatrix{~ & ~ \cr
 				H & 3 \cr
 				I & 2 \cr}	
 $
-\end{flushright}
-\end{minipage}\\
+
 
 %------------------------------------------------
 
@@ -152,7 +147,7 @@ The maximum required FIFO buffer size is 6 as required and the number of firings
 %------------------------------------------------
 
 \subsection{Question 3} % Sub-section
-For my chosen PASS schedule the number of tokens that must be initially stored in the buffer of the feedback channel c9 is \large 2.
+For my chosen PASS schedule the number of tokens that must be initially stored in the buffer of the feedback channel c9 is 2.
 
 
 %------------------------------------------------
@@ -181,6 +176,19 @@ When n=1 we have to wait an entire protocol length to read another beacon, so we
 %------------------------------------------------
 
 \subsection{Question 2} % Sub-sub-section
+For this task I created a class called MySourceNode, this class represents the mote functionality and is to be loaded onto a physical mote to implement the WSN MAC layer protocol as described.
+\\
+
+This class reuses the original SourceNode and SinkNodeModel classes to again determine sink parameters and firing times for correct functionality. Thanks to our previous design choices it is simple to utilise our previous code on this new problem with 3 sinks instead of 5. I change the SinkNodeModel t and n constraints to match the problem description (SinkNodeModel, 12-15). With this exercise n != 1 and therefore the special case to handle that event becomes obsolete and the synchronisations are that much easier to compute.
+\\
+
+The overall control flow is very similar to that of the Ptolemy exercise. I created a method that handles the reading of beacons on different channels as per SourceNode's previously described logic (Question 1). It uses timer callbacks to determine when to fire, when to change channel and when to read beacons (MySouceNode, handleNextAction, 141-168). It is almost equivalent to the fire method in the Ptolemy exercise (SourceNodeActor, fire, 68-89) except it is built around a physical radio which transmits and receives on wireless channels as opposed to a simulation. This meant that I could not change channel as easily as in Ptolemy, in mote I firstly switch off the radio (MySourceNode, switchChannel, 175-184), then switch channels before attempting to either transmit or receive.
+\\
+
+In terms of energy efficiency, my implementation only has a very slight optimisation for energy saving. It is clear that if we know both the parameters for a given sink node, then we no longer need to receive any beacons from it, we have all the values needed to calculate each subsequent reception phase and therefore do not need any more beacons. We can therefore stop receiving when this is the case and save energy by having the radio off at this time, which my solution does (MySourceNode, handleNextAction, 156-166).
+\\
+
+Something I could have adopted for energy efficiency would be to disable all interactions with mote LEDs, currently LEDS are used to indicate the mote is initialised, which stays lit for the entire duration of the motes powered-on lifetime with this assembly loaded onto it (MySourceNode, 94). They are also used when messages are being received (MySourceNode, 126) and when we are transmitting (MySourceNode, 154). Disabling LEDs would undoubtedly improve mote battery life, but my solution uses them anyway as they are very useful for debugging purposes.
 
 %------------------------------------------------
 
@@ -191,5 +199,17 @@ When n=1 we have to wait an entire protocol length to read another beacon, so we
 \section{Part 3 - Embedded platform modelling}
 
 \subsection{Question 1}
+
+\begin{table}[H]
+\centering
+\caption{Number of transitions}
+\label{my-label}
+\begin{tabular}{|l|l|l|}
+\hline
+                & without bus-invert & with bus-invert \\ \hline
+address sub-bus & 26236              & 22602           \\ \hline
+data sub-bus    & 25341              & 21916           \\ \hline
+\end{tabular}
+\end{table}
 
 \end{document}

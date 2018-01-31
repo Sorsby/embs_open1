@@ -38,13 +38,13 @@ public final class MySourceNode {
      */
     private static final int SOURCE_NODE_SHORT_ADDR = 0x42;
 
-    private static final Radio radio = new Radio();
-    private static final Timer timer = new Timer();
+    private static final Radio RADIO = new Radio();
+    private static final Timer TIMER = new Timer();
 
     /**
      * Transmit buffer
      */
-    private static final byte[] xmit = new byte[12];
+    private static final byte[] XMIT = new byte[12];
 
     /**
      * Currently receiving if true.
@@ -53,57 +53,70 @@ public final class MySourceNode {
 
     //static constructor to init the mote source node.
     static {
-        radio.open(Radio.DID, null, 0, 0);
+        RADIO.open(Radio.DID, null, 0, 0);
 
-        //set callback for the timer for reading beacons and firings.
-        timer.setCallback(new TimerEvent(null) {
+        //set callback for the TIMER for reading beacons and firings.
+        TIMER.setCallback(new TimerEvent(null) {
             @Override
             public void invoke(byte param, long time) {
                 timerCb(param, time);
             }
         });
 
-        //set callback for the reception phase on the radio.
-        radio.setRxHandler(new DevCallback(null) {
+        //set callback for the reception phase on the RADIO.
+        RADIO.setRxHandler(new DevCallback(null) {
             @Override
             public int invoke(int flags, byte[] data, int len, int info, long time) {
                 return readBeacon(flags, data, len, info, time);
             }
         });
 
-        //set callback for the transmission phase on the radio.
-        radio.setTxHandler(new DevCallback(null) {
+        //set callback for the transmission phase on the RADIO.
+        RADIO.setTxHandler(new DevCallback(null) {
             @Override
             public int invoke(int flags, byte[] data, int len, int info, long time) {
                 return transmissionCb(flags, data, len, info, time);
             }
         });
 
-        //radio setup
-        xmit[0] = Radio.FCF_DATA;
-        xmit[1] = Radio.FCA_SRC_SADDR | Radio.FCA_DST_SADDR;
-        Util.set16le(xmit, 9, SOURCE_NODE_SHORT_ADDR);
-        xmit[11] = MOTE_PAYLOAD;
+        //RADIO setup
+        XMIT[0] = Radio.FCF_DATA;
+        XMIT[1] = Radio.FCA_SRC_SADDR | Radio.FCA_DST_SADDR;
+        Util.set16le(XMIT, 9, SOURCE_NODE_SHORT_ADDR);
+        XMIT[11] = MOTE_PAYLOAD;
 
         //switch to an initial channel
         switchChannel(sourceNode.getCurrentChannel());
         //initial firing
-        fireSourceNode();
+        handleNextAction();
 
         //turn on yellow led to indicate the source node is enabled.
-        LED.setState(YELLOW_LED, (byte)1);
+        LED.setState(YELLOW_LED, (byte) 1);
     }
 
+    /**
+     * Delegate method for our transmit callbacks.
+     * When we finish trasnmitting, call {@link #handleNextAction()} to handle the next action for the mote.
+     */
     private static int transmissionCb(int flags, byte[] data, int len, int info, long time) {
-        fireSourceNode();
+        handleNextAction();
         return 0;
     }
 
+    /**
+     * Delegate method for our timer callbacks.
+     * Just register the next firing time and call {@link #handleNextAction()} to handle the next action for the mote.
+     */
     private static void timerCb(byte param, long time) {
         sourceNode.registerNextFire(Time.currentTime(Time.MILLISECS));
-        fireSourceNode();
+        handleNextAction();
     }
 
+    /**
+     * Delegate method for the receive callback.
+     * When we receive a beacon, forward it to our {@link #sourceNode} and process as normal.
+     * Finally call {@link #handleNextAction()} to handle the next action for the mote.
+     */
     private static int readBeacon(int flags, byte[] data, int len, int info, long time) {
         if (data != null) {
             long fireTime = Time.currentTime(Time.MILLISECS);
@@ -117,46 +130,56 @@ public final class MySourceNode {
             rxEnabled = false;
         }
 
-        fireSourceNode();
+        handleNextAction();
         return 0;
     }
 
-    private static void fireSourceNode() {
-        timer.cancelAlarm();
+    /**
+     * Handles timer callbacks and performing the correct SourceNode action at any time.
+     * Such as receiving beacons or transmitting to a channel.
+     */
+    private static void handleNextAction() {
+        TIMER.cancelAlarm();
 
         long nextFireTime = sourceNode.getNextFireTime();
         if (nextFireTime > 0)
-            timer.setAlarmTime(Time.toTickSpan(Time.MILLISECS, nextFireTime));
+            TIMER.setAlarmTime(Time.toTickSpan(Time.MILLISECS, nextFireTime));
 
         int sendChannel = sourceNode.getFireChannel();
 
         if (sendChannel != -1) {
+            //we have a channel to transmit on.
             switchChannel(sendChannel);
-            radio.transmit(Device.ASAP | Radio.TXMODE_POWER_MAX | Radio.TXMODE_CCA, xmit, 0, xmit.length, 0);
+            RADIO.transmit(Device.ASAP | Radio.TXMODE_POWER_MAX | Radio.TXMODE_CCA, XMIT, 0, XMIT.length, 0);
             LED.setState(RED_LED, (byte) (1 - LED.getState(RED_LED)));
-
         } else {
-            int readChannel = sourceNode.getCurrentChannel();
+            //read beacons because no transmit needed.
+            int currentChannel = sourceNode.getCurrentChannel();
 
-            if (readChannel != -1) {
-                switchChannel(readChannel);
-                radio.startRx(Device.ASAP | Device.RX4EVER, 0, 0);
+            if (currentChannel != -1) {
+                switchChannel(currentChannel);
+                RADIO.startRx(Device.ASAP | Device.RX4EVER, 0, 0);
                 rxEnabled = true;
             } else if (rxEnabled) {
-                radio.stopRx();
+                RADIO.stopRx();
                 rxEnabled = false;
             }
         }
     }
 
+    /**
+     * Method to switch the current wireless channel.
+     * Turns off the radio before perfomring the channel switch.
+     * @param channel the channel to switch to.
+     */
     private static void switchChannel(int channel) {
-        radio.setState(Device.S_OFF);
+        RADIO.setState(Device.S_OFF);
 
-        Util.set16le(xmit, 3, PAN_ID_OFFSET + channel);
-        Util.set16le(xmit, 5, PAN_ID_OFFSET + channel);
-        Util.set16le(xmit, 7, PAN_ID_OFFSET + channel);
+        Util.set16le(XMIT, 3, PAN_ID_OFFSET + channel);
+        Util.set16le(XMIT, 5, PAN_ID_OFFSET + channel);
+        Util.set16le(XMIT, 7, PAN_ID_OFFSET + channel);
 
-        radio.setChannel((byte) channel);
-        radio.setPanId(PAN_ID_OFFSET + channel, true);
+        RADIO.setChannel((byte) channel);
+        RADIO.setPanId(PAN_ID_OFFSET + channel, true);
     }
 }
