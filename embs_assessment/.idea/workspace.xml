@@ -46,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="139" column="7" lean-forward="true" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
+              <caret line="139" column="7" lean-forward="false" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
               <folding>
                 <element signature="e#1707#1708#0" expanded="true" />
                 <element signature="e#1759#1760#0" expanded="true" />
@@ -362,12 +362,12 @@
       <workItem from="1516840532174" duration="125000" />
       <workItem from="1516840671484" duration="77243000" />
       <workItem from="1517202099807" duration="31582000" />
-      <workItem from="1517285161782" duration="18949000" />
+      <workItem from="1517285161782" duration="18974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127899000" />
+    <option name="totallyTimeSpent" value="127924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1515" y="0" width="1052" height="1407" extended-state="0" />
@@ -719,7 +719,7 @@
     <entry file="file://$PROJECT_DIR$/src/q2mote/MySourceNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="139" column="7" lean-forward="true" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
+          <caret line="139" column="7" lean-forward="false" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
           <folding>
             <element signature="e#1707#1708#0" expanded="true" />
             <element signature="e#1759#1760#0" expanded="true" />
