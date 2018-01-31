@@ -212,4 +212,33 @@ data sub-bus    & 25341              & 21916           \\ \hline
 \end{tabular}
 \end{table}
 
+Approximately a 14\% decrease in bus transitions for both the address sub-bus and data sub-bus when using bus-invert.
+\\ \\
+Bus-invert coding for low power effectively reduces the number of transitions on a bus, as seen in Table 1 above.
+The following relationship shows how the number of transitions is linearly related to the dynamic power dissipation of the chip ($P_{chip}$):
+\\ \\
+$P_{chip} \propto C_{average} \cdot V_{dd}^2 \cdot f \cdot N(transitions)$ \cite{businvert:1995}
+\\ \\
+This decrease in the total number of transitions translates into a decrease in the activity factor of the bus, where $N(transitions)$ is the activity factor. This in turn means a linear decrease in the dynamic power dissipation of the chip.
+\\ \\
+We can therefore estimate that our implementation of bus-invert coding on the given multi-processor platform would reduce the dynamic power dissipation by approximately 14\% just as the transitions were.
+\\ \\
+As for static power dissipation, in order to implement bus-invert coding, we require extra circuitry or in our simulated case we have extra actors. These extra circuits/actors result in a greater static power dissipation, however, static power dissipation is typically insignificant being very small in magnitude \cite{businvert:1995}.
+\\ \\
+So in conclusion, the bus-invert coding is an effective method of reducing the dynamic power dissipation of a low-power embedded system and typically compensates for any increase in static power dissipation.
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[1]{businvert:1995}
+Mircea R. Stan, Member, IEEE, and Wayne P. Burleson, Member, IEEE (1995).
+\newblock Bus-Invert Coding for Low-Power I/O.
+\newblock {\em IEEE TRANSACTIONS ON VERY LARGE SCALE INTEGRATION (VLSI) SYSTEMS, VOL. 3, NO. I, MARCH 1995}, 49-58.
+ 
+\end{thebibliography}
+
 \end{document}
