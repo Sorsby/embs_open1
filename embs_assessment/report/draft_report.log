@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  31 JAN 2018 04:10
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6350 64-bit) (preloaded format=xelatex 2017.9.3)  31 JAN 2018 04:23
 entering extended mode
 **./draft_report.tex
 (draft_report.tex
@@ -277,19 +277,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--190
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 215--229
-
- []
+LaTeX Warning: Citation `businvert:1995' on page 5 undefined on input line 220.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
- []
+LaTeX Warning: Citation `businvert:1995' on page 5 undefined on input line 226.
+
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 215--229
@@ -306,11 +300,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--229
 
  []
 
-[5] [6] (draft_report.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--229
+
+ []
+
+[5] [6] (draft_report.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  1876 strings out of 427834
  22888 string characters out of 3148124
- 103952 words of memory out of 3000000
+ 103941 words of memory out of 3000000
  5838 multiletter control sequences out of 15000+200000
  7162 words of font info for 40 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
